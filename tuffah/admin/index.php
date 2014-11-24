@@ -28,7 +28,7 @@
 <a class="brand" href="index.php">Tuffah Invoice System</a>
 <div class="nav-collapse">
 <ul class="nav">
-<li><a tabindex="-1" href="invoice.php">Invoice</a></li>
+<li><a tabindex="-1" href="../invoice.php">Invoice</a></li>
 <li><a tabindex="-1" href="../tuffah.info">About</a></li>
 <li><a tabindex="-1" href="#">Logout</a></li>
 </ul>
@@ -46,7 +46,7 @@
 </ul>
 <div class="push">
 <div align="center">
-Welcome To Tuffah Invoice System Version 1.0.1 .<br />You are the Admin in this System. <br />Now You can Add Customer, Delete Customer, Update Customer And View Customer.           
+Welcome To Tuffah Invoice System Version 1.0.1 .<br />You are the Admin in this System. <br />Now You can manage the user.           
 </div>
 
 </div>

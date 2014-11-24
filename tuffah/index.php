@@ -1,3 +1,28 @@
+<?
+$user = "root";
+$pass = "";
+$host = "localhost";
+$db = "invoice";
+
+mysql_connect($host, $user, $pass);
+mysql_select_db($db);
+
+if (isset($_POST['username'])){
+	$username = $_POST['username'];
+	$password = $_POST['password'];
+	$sql = "SELECT * FROM staff WHERE username = '".$username."' AND password = '".$password."'LIMIT 1";
+	$res = $sql_query($sql);
+	if (mysql_num_rows($res)==1){
+		echo "you have logged in";
+		exit();
+	}
+	else{
+		echo "invalid. you have wrong username/password";
+		exit();
+	}
+}
+?>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -44,7 +69,7 @@ Welcome To Tuffah Invoice System Version 1.0.1 .
 <div align="center">
 <center><fieldset style="width:50%">
 <h1>TUFFAH INVOICE SYSTEM</h1>
-<form method="post" action="admin/index.php">
+<form method="post" action="index.php">
 Username<br />
 <input type="text" name="user" size="40" /><br />
 Password<br />
