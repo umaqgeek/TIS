@@ -1,8 +1,9 @@
 <?php
-$dbhost = 'localhost';
-$dbuser = 'root'; 
-$dbpass = ''; 
-$conn = mysql_connect($dbhost, $dbuser, $dbpass) or die ('Error connecting to mysql');
-$db = 'invoice';
-mysql_select_db($db);
+include("config.php");
+
+
+
+$db = mysql_connect("$hostname", "$user","$pass");
+
+mysql_select_db("$database",$db);
 ?>

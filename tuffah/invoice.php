@@ -1,3 +1,6 @@
+<?php
+	include ('include/config.php')
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -9,11 +12,10 @@
 <div align="center">
   <div><table width="100%" border="0" cellspacing="0" cellpadding="0">
   <tr>
-    <td width="60%"><img src="image/login logo.png" width="278" height="93" /><br />
-    No13, Lorong 1, Jalan Bukit Beruang Utama,<br />
-    Taman Bukit Puteri, 75450, Ayer Keroh, Melaka.<br />
-    Phone:019-9737579<br />
-    Fax:-</td>
+    <td width="60%"><img src="<?php echo $companylogo; ?>" width="278" height="93" /><br />
+    <?php echo $c_address; ?><br />
+    <?php echo $c_phone; ?><br />
+    <?php echo $c_fax; ?><br /></td>
     <td width="14%">&nbsp;</td>
     <td width="26%"><table width="100%" border="0" cellspacing="1" cellpadding="1">
   <tr>
