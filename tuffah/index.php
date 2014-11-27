@@ -1,22 +1,5 @@
 <?php 
-include ('inc/config.php');
-
-if (isset($_POST['username'])){
-	$username = $_POST['username'];
-	$password = $_POST['password'];
-	$sql = "SELECT * FROM staff WHERE username = '".$username."' AND password = '".$password."'LIMIT 1";
-	$res = $sql_query($sql);
-	if (mysql_num_rows($res)==1){
-		$_SESSION['auth'] = true;
-		header ("Location:menu.php");
-		exit();
-	}
-	else{
-		echo "Invalid Login. Your Username/Password was Wrong";
-		exit();
-	}
-}
-?>
+include ('config.php');
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -28,9 +11,9 @@ if (isset($_POST['username'])){
 
 <body>
 <div id="wrapper">
-	<?php include_once("inc/header.php"); ?>
+	<?php include_once("temp_header.php"); ?>
     <br />
-    <?php include_once("inc/login.php"); ?>
+    <?php include_once("temp_login.php"); ?>
 </div>
 </body>
 </html>

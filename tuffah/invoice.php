@@ -1,5 +1,5 @@
 <?php
-	include ('include/config.php')
+	include ('config.php')
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -10,7 +10,8 @@
 
 <body>
 <div align="center">
-  <div><table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <div>
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
   <tr>
     <td width="60%"><img src="<?php echo $companylogo; ?>" width="278" height="93" /><br />
     <?php echo $c_address; ?><br />
