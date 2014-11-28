@@ -6,60 +6,166 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Tuffah Invoice System</title>
+<link rel="stylesheet" type="text/css" href="css/nav-style.css" />
 </head>
 
 <body>
-<div align="center">
-  <div>
-  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+<div align="center" class="main">
+  <?php include("temp_nav.php"); ?><br /><br />
+  <div align="center">
+  	<table align="center" width="100%" border="0" cellspacing="0" cellpadding="0">
   <tr>
-    <td width="60%"><img src="<?php echo $companylogo; ?>" width="278" height="93" /><br />
-    <?php echo $c_address; ?><br />
-    <?php echo $c_phone; ?><br />
-    <?php echo $c_fax; ?><br /></td>
-    <td width="14%">&nbsp;</td>
-    <td width="26%"><table width="100%" border="0" cellspacing="1" cellpadding="1">
-  <tr>
-    <td colspan="2" align="center"><h1>INVOICE</h1></td>
+    <td width="33%"><img src="<?php echo $companylogo; ?>" /><br />
+    				<?php echo $c_address; ?><br />
+                    <?php echo $c_phone; ?><br />
+                    <?php echo $c_fax; ?></td>
+    <td width="21%">&nbsp;</td>
+    <td width="46%"><b>INVOICE</b><br />
+    DATE:<input name="date" type="text" /><br />
+    INVOICE #<input name="inv" type="text" /><br />
+    Customer ID:<input name="custID" type="text" /><br /><br />
+    Due Date:<input name="due" type="text" /></td>
   </tr>
   <tr>
-    <td width="47%" align="left">DATE:</td>
-    <td width="53%" align="left">&nbsp;</td>
+  	<td bgcolor="#003300"><font color="#FFFFFF">BILL TO</font></td>
   </tr>
   <tr>
-    <td width="47%" align="left">INVOICE #</td>
-    <td width="53%" align="left">&nbsp;</td>
-  </tr>
-  <tr>
-    <td width="47%" align="left">Customer ID</td>
-    <td width="53%" align="left">&nbsp;</td>
-  </tr>
-  <tr>
-    <td width="47%" align="left">&nbsp;</td>
-    <td width="53%" align="left">&nbsp;</td>
-  </tr>
-  <tr>
-    <td width="47%" align="left">DUE DATE:</td>
-    <td width="53%" align="left">&nbsp;</td>
-  </tr>
-</table>
-</td>
-  </tr>
-  <tr>
-    <td bgcolor="#99CC66"><font color="#FFFFFF">BILL TO</font></td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-   <tr>
-    <td>Nurul Fatin Nadia Bt Mohamad Sadon<br />
+  <td>Nurul Fatin Nadia Bt Mohamad Sadon<br />
       Al Qanaah Resources Sdn Bhd<br />
-    No6,Jln9/9,Perjiranan 9,Pasir Gudang Industrial Estate,81700 Pasir Gudang Johor<br />
-    07-2511170</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
+      No6,Jln9/9,Perjiranan 9,Pasir Gudang Industrial Estate,81700 Pasir Gudang Johor<br />
+      07-2511170</td>
+   </tr>
+   <tr>
+   	<table width="100%" border="1">
+  		<tr>
+    		<td bgcolor="#003300"><font color="#FFFFFF">DESCRIPTION</font></td>
+    		<td bgcolor="#003300"><font color="#FFFFFF">TAXED</font></td>
+            <td bgcolor="#003300"><font color="#FFFFFF">AMOUNT</font></td>
+  		</tr>
+ 		<tr>
+    		<td><input name="" type="text" /></td>
+    		<td><input name="" type="text" /></td>
+            <td><input name="" type="text" /></td>
+  		</tr>
+  		<tr>
+    		<td><input name="" type="text" /></td>
+    		<td><input name="" type="text" /></td>
+            <td><input name="" type="text" /></td>
+  		</tr>
+  		<tr>
+    		<td><input name="" type="text" /></td>
+    		<td><input name="" type="text" /></td>
+            <td><input name="" type="text" /></td>
+  		</tr>
+  		<tr>
+    		<td><input name="" type="text" /></td>
+    		<td><input name="" type="text" /></td>
+            <td><input name="" type="text" /></td>
+  		</tr>
+  		<tr>
+    		<td><input name="" type="text" /></td>
+    		<td><input name="" type="text" /></td>
+            <td><input name="" type="text" /></td>
+  		</tr>
+  		<tr>
+    		<td><input name="" type="text" /></td>
+    		<td><input name="" type="text" /></td>
+            <td><input name="" type="text" /></td>
+  		</tr>
+  		<tr>
+    		<td><input name="" type="text" /></td>
+    		<td><input name="" type="text" /></td>
+            <td><input name="" type="text" /></td>
+  		</tr>
+  		<tr>
+    		<td><input name="" type="text" /></td>
+    		<td><input name="" type="text" /></td>
+            <td><input name="" type="text" /></td>
+  		</tr>
+  		<tr>
+    		<td><input name="" type="text" /></td>
+    		<td><input name="" type="text" /></td>
+            <td><input name="" type="text" /></td>
+  		</tr>
+  		<tr>
+    		<td><input name="" type="text" /></td>
+    		<td><input name="" type="text" /></td>
+            <td><input name="" type="text" /></td>
+  		</tr>
+  		<<tr>
+    		<td><input name="" type="text" /></td>
+    		<td><input name="" type="text" /></td>
+            <td><input name="" type="text" /></td>
+  		</tr>
+  		<tr>
+    		<td><input name="" type="text" /></td>
+    		<td><input name="" type="text" /></td>
+            <td><input name="" type="text" /></td>
+  		</tr>
+  		<tr>
+    		<td><input name="" type="text" /></td>
+    		<td><input name="" type="text" /></td>
+            <td><input name="" type="text" /></td>
+  		</tr>
+  		<tr>
+    		<td><input name="" type="text" /></td>
+    		<td><input name="" type="text" /></td>
+            <td><input name="" type="text" /></td>
+  		</tr>
+  		<tr>
+    		<td><input name="" type="text" /></td>
+    		<td><input name="" type="text" /></td>
+            <td><input name="" type="text" /></td>
+  		</tr>
+  		<tr>
+    		<td><input name="" type="text" /></td>
+    		<td><input name="" type="text" /></td>
+            <td><input name="" type="text" /></td>
+  		</tr>
+  		<tr>
+    		<td><input name="" type="text" /></td>
+    		<td><input name="" type="text" /></td>
+            <td><input name="" type="text" /></td>
+  		</tr>
+  		<tr>
+    		<td><input name="" type="text" /></td>
+    		<td><input name="" type="text" /></td>
+            <td><input name="" type="text" /></td>
+  		</tr>
+  		<tr>
+    		<td><input name="" type="text" /></td>
+    		<td><input name="" type="text" /></td>
+            <td><input name="" type="text" /></td>
+  		</tr>
+  		<tr>
+    		<td><input name="" type="text" /></td>
+    		<td><input name="" type="text" /></td>
+            <td><input name="" type="text" /></td>
+  		</tr>
+  		<tr>
+    		<td><input name="" type="text" /></td>
+    		<td><input name="" type="text" /></td>
+            <td><input name="" type="text" /></td>
+  		</tr>
+  		<tr>
+    		<td><input name="" type="text" /></td>
+    		<td><input name="" type="text" /></td>
+            <td><input name="" type="text" /></td>
+  		</tr>
+  		<tr>
+    		<td><input name="" type="text" /></td>
+    		<td><input name="" type="text" /></td>
+            <td><input name="" type="text" /></td>
+  		</tr>
+  		<tr>
+    		<td><input name="" type="text" /></td>
+    		<td><input name="" type="text" /></td>
+            <td><input name="" type="text" /></td>
+  		</tr>
+	</table>
+	</tr>
 </table>
-</div>
+
 </div>
 </body>
 </html>

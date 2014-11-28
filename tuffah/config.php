@@ -17,7 +17,7 @@
 	$companylogo = "image/login logo.png";
 	
 	// Company or Your Email Address
-	$youremail = "umar@tuffah.info";
+	$email = "umar@tuffah.info";
 	$powerby = "Tuffah Informatics";
 	
 ?>
