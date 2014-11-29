@@ -10,7 +10,7 @@ include ('config.php');
 </head>
 
 <body>
-<div id="wrapper">
+<div>
 	<?php include_once("temp_header.php"); ?>
     <br />
     <?php include_once("temp_login.php"); ?>

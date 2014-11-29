@@ -12,201 +12,36 @@
 <body>
 <div align="center" class="main">
   <?php include("temp_nav.php"); ?><br /><br />
-  <div align="center">
-  <form action="" method="POST">
-  	<table align="center">
-  <tr>
-    <td width="157"><img src="<?php echo $companylogo; ?>" width="157" height="60" /><br />
-    				<?php echo $c_address; ?><br />
-                    <?php echo $c_phone; ?><br />
-                    <?php echo $c_fax; ?></td>
-    <td width="10">&nbsp;</td>
-    <td width="270">
-    	<table width="310">
-  			<tr>
-    			<td align="center" colspan="3"><b>INVOICE</b><br /></td>
-  			</tr>
-    		<tr>
-    			<td width="32%">DATE<br />
-            		INVOICE<br />
-                	Customer<br /><br />
-                	Due Date</td>
-    			<td width="4%">:<br />
-            		#<br />
-                	:<br /><br />
-                	:</td>
-            	<td width="64%"><input name="" type="text" size="2" />
-            	/<input name="" type="text" size="2" />
-            	/<input name="" type="text" size="4" /><br />
-            	<input name="" type="text" size="2" />
-            	/<input name="" type="text" size="2" />
-            	/<input name="" type="text" size="2" /><br />
-            	<input name="" type="text" size="6" /><br /><br />
-                <input name="" type="text" size="6" /></td>
-  			</tr>
-		</table>
-	</td>
-  </tr>
-  <tr>
-  	<td bgcolor="#003300"><font color="#FFFFFF">BILL TO</font></td>
-  </tr>
-  <tr>
-  <td>Nurul Fatin Nadia Bt Mohamad Sadon<br />
-      Al Qanaah Resources Sdn Bhd<br />
-      No6,Jln9/9,Perjiranan 9,Pasir Gudang Industrial Estate,81700 Pasir Gudang Johor<br />
-      07-2511170</td>
-   </tr>
-   <tr>
-   	<table bordercolor="#666666">
-  		<tr>
-    		<td bgcolor="#003300"><font color="#FFFFFF">DESCRIPTION</font></td>
-    		<td bgcolor="#003300"><font color="#FFFFFF">TAXED</font></td>
-            <td bgcolor="#003300"><font color="#FFFFFF">AMOUNT</font></td>
-  		</tr>
- 		<tr>
-    		<td><input name="" type="text" size="100" /></td>
-    		<td><input name="" type="text" size="6" /></td>
-            <td><input name="" type="text" size="6" /></td>
-  		</tr>
-  		<tr>
-    		<td><input name="" type="text" size="100" /></td>
-    		<td><input name="" type="text" size="6" /></td>
-            <td><input name="" type="text" size="6" /></td>
-  		</tr>
-  		<tr>
-    		<td><input name="" type="text" size="100" /></td>
-    		<td><input name="" type="text" size="6" /></td>
-            <td><input name="" type="text" size="6" /></td>
-  		</tr>
-  		<tr>
-    		<td><input name="" type="text" size="100" /></td>
-    		<td><input name="" type="text" size="6" /></td>
-            <td><input name="" type="text" size="6" /></td>
-  		</tr>
-  		<tr>
-    		<td><input name="" type="text" size="100" /></td>
-    		<td><input name="" type="text" size="6" /></td>
-            <td><input name="" type="text" size="6" /></td>
-  		</tr>
-  		<tr>
-    		<td><input name="" type="text" size="100" /></td>
-    		<td><input name="" type="text" size="6" /></td>
-            <td><input name="" type="text" size="6" /></td>
-  		</tr>
-  		<tr>
-    		<td><input name="" type="text" size="100" /></td>
-    		<td><input name="" type="text" size="6" /></td>
-            <td><input name="" type="text" size="6" /></td>
-  		</tr>
-  		<tr>
-    		<td><input name="" type="text" size="100" /></td>
-    		<td><input name="" type="text" size="6" /></td>
-            <td><input name="" type="text" size="6" /></td>
-  		</tr>
-  		<tr>
-    		<td><input name="" type="text" size="100" /></td>
-    		<td><input name="" type="text" size="6" /></td>
-            <td><input name="" type="text" size="6" /></td>
-  		</tr>
-  		<tr>
-    		<td><input name="" type="text" size="100" /></td>
-    		<td><input name="" type="text" size="6" /></td>
-            <td><input name="" type="text" size="6" /></td>
-  		</tr>
-  		<<tr>
-    		<td><input name="" type="text" size="100" /></td>
-    		<td><input name="" type="text" size="6" /></td>
-            <td><input name="" type="text" size="6" /></td>
-  		</tr>
-  		<tr>
-    		<td><input name="" type="text" size="100" /></td>
-    		<td><input name="" type="text" size="6" /></td>
-            <td><input name="" type="text" size="6" /></td>
-  		</tr>
-  		<tr>
-    		<td><input name="" type="text" size="100" /></td>
-    		<td><input name="" type="text" size="6" /></td>
-            <td><input name="" type="text" size="6" /></td>
-  		</tr>
-  		<tr>
-    		<td><input name="" type="text" size="100" /></td>
-    		<td><input name="" type="text" size="6" /></td>
-            <td><input name="" type="text" size="6" /></td>
-  		</tr>
-  		<tr>
-    		<td><input name="" type="text" size="100" /></td>
-    		<td><input name="" type="text" size="6" /></td>
-            <td><input name="" type="text" size="6" /></td>
-  		</tr>
-  		<tr>
-    		<td><input name="" type="text" size="100" /></td>
-    		<td><input name="" type="text" size="6" /></td>
-            <td><input name="" type="text" size="6" /></td>
-  		</tr>
-  		<tr>
-    		<td><input name="" type="text" size="100" /></td>
-    		<td><input name="" type="text" size="6" /></td>
-            <td><input name="" type="text" size="6" /></td>
-  		</tr>
-  		<tr>
-    		<td><input name="" type="text" size="100" /></td>
-    		<td><input name="" type="text" size="6" /></td>
-            <td><input name="" type="text" size="6" /></td>
-  		</tr>
-  		<tr>
-    		<td><input name="" type="text" size="100" /></td>
-    		<td><input name="" type="text" size="6" /></td>
-            <td><input name="" type="text" size="6" /></td>
-  		</tr>
-  		<tr>
-    		<td><input name="" type="text" size="100" /></td>
-    		<td><input name="" type="text" size="6" /></td>
-            <td><input name="" type="text" size="6" /></td>
-  		</tr>
-  		<tr>
-    		<td><input name="" type="text" size="100" /></td>
-    		<td><input name="" type="text" size="6" /></td>
-            <td><input name="" type="text" size="6" /></td>
-  		</tr>
-  		<tr>
-    		<td><input name="" type="text" size="100" /></td>
-    		<td><input name="" type="text" size="6" /></td>
-            <td><input name="" type="text" size="6" /></td>
-  		</tr>
-  		<tr>
-    		<td><input name="" type="text" size="100" /></td>
-    		<td><input name="" type="text" size="6" /></td>
-            <td><input name="" type="text" size="6" /></td>
-  		</tr>
-  		<tr>
-    		<td><input name="" type="text" size="100" /></td>
-    		<td><input name="" type="text" size="6" /></td>
-            <td><input name="" type="text" size="6" /></td>
-        </tr>
-        <tr>
-        <td colspan="3">
-			<table align="right">
-				<tr>
-					<td>Subtotal<br />
-    					Taxable <br />
-        				Tax Rate <br />
-        				Tax Due <br />
-        				Amount Paid
-       					 <hr />
-        				TOTAL DUE 
-     				</td>
-     				<td><input name="" type="text" size="6" /><br />
-    	 				<input name="" type="text" size="6" /><br />
-         				<input name="" type="text" size="6" /><br />
-         				<input name="" type="text" size="6" /><br />
-         				<input name="" type="text" size="6" />
-        <hr />
-         				<input name="" type="text" size="6" />
-      </td>
-</tr>
-</table>
-<br />
-<input name="Print" type="button" value="print" /></form>
+<div>
+  	<form action="" method="post">
+    	<table width="424">
+        	<tr>
+            	<td width="203"><img src="<?php echo $companylogo; ?>" width="180" height="63" /><br />
+                	<?php echo $c_address; ?><br />
+                	Phone:<?php echo $c_phone; ?><br />
+                	Fax:<?php echo $c_fax; ?><br /></td>
+                <td width="10">&nbsp;</td>
+                <td width="204">
+                	<table width="202" height="80">
+                    	<tr>
+                       	  <td colspan="2"><strong><h1>INVOICE</h1></strong></td>
+                        </tr>
+                        <tr>
+                          <td width="108">DATE :<br />
+                          	INVOICE #<br />
+                            Customer ID<br /><br />
+                            Due Date</td>
+                          <td width="60"><input name="" type="text" size="10" /><br />
+                            <input name="" type="text" size="10" /><br />
+                            <input name="" type="text" size="10" /><br /><br />
+                            <input name="" type="text" size="10" /></td>
+                        </tr>
+                    </table>
+            </tr>
+            <tr>
+            	<td bgcolor="#009966"><font color="#FFFFFF">BILL TO</font></td>
+        </table>
+  </form>
 </div>
 </body>
 </html>
