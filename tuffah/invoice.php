@@ -13,18 +13,39 @@
 <div align="center" class="main">
   <?php include("temp_nav.php"); ?><br /><br />
   <div align="center">
-  	<table align="center" width="100%" border="0" cellspacing="0" cellpadding="0">
+  <form action="" method="POST">
+  	<table align="center">
   <tr>
-    <td width="33%"><img src="<?php echo $companylogo; ?>" /><br />
+    <td width="157"><img src="<?php echo $companylogo; ?>" width="157" height="60" /><br />
     				<?php echo $c_address; ?><br />
                     <?php echo $c_phone; ?><br />
                     <?php echo $c_fax; ?></td>
-    <td width="21%">&nbsp;</td>
-    <td width="46%"><b>INVOICE</b><br />
-    DATE:<input name="date" type="text" /><br />
-    INVOICE #<input name="inv" type="text" /><br />
-    Customer ID:<input name="custID" type="text" /><br /><br />
-    Due Date:<input name="due" type="text" /></td>
+    <td width="10">&nbsp;</td>
+    <td width="270">
+    	<table width="310">
+  			<tr>
+    			<td align="center" colspan="3"><b>INVOICE</b><br /></td>
+  			</tr>
+    		<tr>
+    			<td width="32%">DATE<br />
+            		INVOICE<br />
+                	Customer<br /><br />
+                	Due Date</td>
+    			<td width="4%">:<br />
+            		#<br />
+                	:<br /><br />
+                	:</td>
+            	<td width="64%"><input name="" type="text" size="2" />
+            	/<input name="" type="text" size="2" />
+            	/<input name="" type="text" size="4" /><br />
+            	<input name="" type="text" size="2" />
+            	/<input name="" type="text" size="2" />
+            	/<input name="" type="text" size="2" /><br />
+            	<input name="" type="text" size="6" /><br /><br />
+                <input name="" type="text" size="6" /></td>
+  			</tr>
+		</table>
+	</td>
   </tr>
   <tr>
   	<td bgcolor="#003300"><font color="#FFFFFF">BILL TO</font></td>
@@ -36,136 +57,156 @@
       07-2511170</td>
    </tr>
    <tr>
-   	<table width="100%" border="1">
+   	<table bordercolor="#666666">
   		<tr>
     		<td bgcolor="#003300"><font color="#FFFFFF">DESCRIPTION</font></td>
     		<td bgcolor="#003300"><font color="#FFFFFF">TAXED</font></td>
             <td bgcolor="#003300"><font color="#FFFFFF">AMOUNT</font></td>
   		</tr>
  		<tr>
-    		<td><input name="" type="text" /></td>
-    		<td><input name="" type="text" /></td>
-            <td><input name="" type="text" /></td>
+    		<td><input name="" type="text" size="100" /></td>
+    		<td><input name="" type="text" size="6" /></td>
+            <td><input name="" type="text" size="6" /></td>
   		</tr>
   		<tr>
-    		<td><input name="" type="text" /></td>
-    		<td><input name="" type="text" /></td>
-            <td><input name="" type="text" /></td>
+    		<td><input name="" type="text" size="100" /></td>
+    		<td><input name="" type="text" size="6" /></td>
+            <td><input name="" type="text" size="6" /></td>
   		</tr>
   		<tr>
-    		<td><input name="" type="text" /></td>
-    		<td><input name="" type="text" /></td>
-            <td><input name="" type="text" /></td>
+    		<td><input name="" type="text" size="100" /></td>
+    		<td><input name="" type="text" size="6" /></td>
+            <td><input name="" type="text" size="6" /></td>
   		</tr>
   		<tr>
-    		<td><input name="" type="text" /></td>
-    		<td><input name="" type="text" /></td>
-            <td><input name="" type="text" /></td>
+    		<td><input name="" type="text" size="100" /></td>
+    		<td><input name="" type="text" size="6" /></td>
+            <td><input name="" type="text" size="6" /></td>
   		</tr>
   		<tr>
-    		<td><input name="" type="text" /></td>
-    		<td><input name="" type="text" /></td>
-            <td><input name="" type="text" /></td>
+    		<td><input name="" type="text" size="100" /></td>
+    		<td><input name="" type="text" size="6" /></td>
+            <td><input name="" type="text" size="6" /></td>
   		</tr>
   		<tr>
-    		<td><input name="" type="text" /></td>
-    		<td><input name="" type="text" /></td>
-            <td><input name="" type="text" /></td>
+    		<td><input name="" type="text" size="100" /></td>
+    		<td><input name="" type="text" size="6" /></td>
+            <td><input name="" type="text" size="6" /></td>
   		</tr>
   		<tr>
-    		<td><input name="" type="text" /></td>
-    		<td><input name="" type="text" /></td>
-            <td><input name="" type="text" /></td>
+    		<td><input name="" type="text" size="100" /></td>
+    		<td><input name="" type="text" size="6" /></td>
+            <td><input name="" type="text" size="6" /></td>
   		</tr>
   		<tr>
-    		<td><input name="" type="text" /></td>
-    		<td><input name="" type="text" /></td>
-            <td><input name="" type="text" /></td>
+    		<td><input name="" type="text" size="100" /></td>
+    		<td><input name="" type="text" size="6" /></td>
+            <td><input name="" type="text" size="6" /></td>
   		</tr>
   		<tr>
-    		<td><input name="" type="text" /></td>
-    		<td><input name="" type="text" /></td>
-            <td><input name="" type="text" /></td>
+    		<td><input name="" type="text" size="100" /></td>
+    		<td><input name="" type="text" size="6" /></td>
+            <td><input name="" type="text" size="6" /></td>
   		</tr>
   		<tr>
-    		<td><input name="" type="text" /></td>
-    		<td><input name="" type="text" /></td>
-            <td><input name="" type="text" /></td>
+    		<td><input name="" type="text" size="100" /></td>
+    		<td><input name="" type="text" size="6" /></td>
+            <td><input name="" type="text" size="6" /></td>
   		</tr>
   		<<tr>
-    		<td><input name="" type="text" /></td>
-    		<td><input name="" type="text" /></td>
-            <td><input name="" type="text" /></td>
+    		<td><input name="" type="text" size="100" /></td>
+    		<td><input name="" type="text" size="6" /></td>
+            <td><input name="" type="text" size="6" /></td>
   		</tr>
   		<tr>
-    		<td><input name="" type="text" /></td>
-    		<td><input name="" type="text" /></td>
-            <td><input name="" type="text" /></td>
+    		<td><input name="" type="text" size="100" /></td>
+    		<td><input name="" type="text" size="6" /></td>
+            <td><input name="" type="text" size="6" /></td>
   		</tr>
   		<tr>
-    		<td><input name="" type="text" /></td>
-    		<td><input name="" type="text" /></td>
-            <td><input name="" type="text" /></td>
+    		<td><input name="" type="text" size="100" /></td>
+    		<td><input name="" type="text" size="6" /></td>
+            <td><input name="" type="text" size="6" /></td>
   		</tr>
   		<tr>
-    		<td><input name="" type="text" /></td>
-    		<td><input name="" type="text" /></td>
-            <td><input name="" type="text" /></td>
+    		<td><input name="" type="text" size="100" /></td>
+    		<td><input name="" type="text" size="6" /></td>
+            <td><input name="" type="text" size="6" /></td>
   		</tr>
   		<tr>
-    		<td><input name="" type="text" /></td>
-    		<td><input name="" type="text" /></td>
-            <td><input name="" type="text" /></td>
+    		<td><input name="" type="text" size="100" /></td>
+    		<td><input name="" type="text" size="6" /></td>
+            <td><input name="" type="text" size="6" /></td>
   		</tr>
   		<tr>
-    		<td><input name="" type="text" /></td>
-    		<td><input name="" type="text" /></td>
-            <td><input name="" type="text" /></td>
+    		<td><input name="" type="text" size="100" /></td>
+    		<td><input name="" type="text" size="6" /></td>
+            <td><input name="" type="text" size="6" /></td>
   		</tr>
   		<tr>
-    		<td><input name="" type="text" /></td>
-    		<td><input name="" type="text" /></td>
-            <td><input name="" type="text" /></td>
+    		<td><input name="" type="text" size="100" /></td>
+    		<td><input name="" type="text" size="6" /></td>
+            <td><input name="" type="text" size="6" /></td>
   		</tr>
   		<tr>
-    		<td><input name="" type="text" /></td>
-    		<td><input name="" type="text" /></td>
-            <td><input name="" type="text" /></td>
+    		<td><input name="" type="text" size="100" /></td>
+    		<td><input name="" type="text" size="6" /></td>
+            <td><input name="" type="text" size="6" /></td>
   		</tr>
   		<tr>
-    		<td><input name="" type="text" /></td>
-    		<td><input name="" type="text" /></td>
-            <td><input name="" type="text" /></td>
+    		<td><input name="" type="text" size="100" /></td>
+    		<td><input name="" type="text" size="6" /></td>
+            <td><input name="" type="text" size="6" /></td>
   		</tr>
   		<tr>
-    		<td><input name="" type="text" /></td>
-    		<td><input name="" type="text" /></td>
-            <td><input name="" type="text" /></td>
+    		<td><input name="" type="text" size="100" /></td>
+    		<td><input name="" type="text" size="6" /></td>
+            <td><input name="" type="text" size="6" /></td>
   		</tr>
   		<tr>
-    		<td><input name="" type="text" /></td>
-    		<td><input name="" type="text" /></td>
-            <td><input name="" type="text" /></td>
+    		<td><input name="" type="text" size="100" /></td>
+    		<td><input name="" type="text" size="6" /></td>
+            <td><input name="" type="text" size="6" /></td>
   		</tr>
   		<tr>
-    		<td><input name="" type="text" /></td>
-    		<td><input name="" type="text" /></td>
-            <td><input name="" type="text" /></td>
+    		<td><input name="" type="text" size="100" /></td>
+    		<td><input name="" type="text" size="6" /></td>
+            <td><input name="" type="text" size="6" /></td>
   		</tr>
   		<tr>
-    		<td><input name="" type="text" /></td>
-    		<td><input name="" type="text" /></td>
-            <td><input name="" type="text" /></td>
+    		<td><input name="" type="text" size="100" /></td>
+    		<td><input name="" type="text" size="6" /></td>
+            <td><input name="" type="text" size="6" /></td>
   		</tr>
   		<tr>
-    		<td><input name="" type="text" /></td>
-    		<td><input name="" type="text" /></td>
-            <td><input name="" type="text" /></td>
-  		</tr>
-	</table>
-	</tr>
+    		<td><input name="" type="text" size="100" /></td>
+    		<td><input name="" type="text" size="6" /></td>
+            <td><input name="" type="text" size="6" /></td>
+        </tr>
+        <tr>
+        <td colspan="3">
+			<table align="right">
+				<tr>
+					<td>Subtotal<br />
+    					Taxable <br />
+        				Tax Rate <br />
+        				Tax Due <br />
+        				Amount Paid
+       					 <hr />
+        				TOTAL DUE 
+     				</td>
+     				<td><input name="" type="text" size="6" /><br />
+    	 				<input name="" type="text" size="6" /><br />
+         				<input name="" type="text" size="6" /><br />
+         				<input name="" type="text" size="6" /><br />
+         				<input name="" type="text" size="6" />
+        <hr />
+         				<input name="" type="text" size="6" />
+      </td>
+</tr>
 </table>
-
+<br />
+<input name="Print" type="button" value="print" /></form>
 </div>
 </body>
 </html>
