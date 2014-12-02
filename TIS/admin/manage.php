@@ -15,7 +15,7 @@ include('../inc/config.php');
     	<div class="navbar">
     		<ul id="menu">
         		<li><a href="index.php"><img src="../img/login logo.png" width="180" height="60" /></a></li>
-                <li><a href="#">Manage System</a></li>
+                <li><a href="manage.php">Manage System</a></li>
         		<li><a href="#">Invoice</a></li>
         		<li><a href="#">Contact Us</a></li>
         		<li><a href="#">Logout</a></li>
@@ -24,11 +24,21 @@ include('../inc/config.php');
         	<br /><br /><br />
         <div class="content">
         	<div class="m">
-            	<table width="164" align="center">
+            	<table width="524" align="center">
                 	<tr>
-                		<td width="221"><a href="#"><img src="../img/images.png" width="158" height="158" /></a><br /><center>Staff</center></td>
+                		<td align="center"><a href="staff.php"><img src="../img/images.png" width="158" height="158" /></a><br /><center>Staff</center></td>
+                        <td align="center"><a href="project.php"><img src="../img/download.jpg" width="158" height="158" /></a><br /><center>Project</center></td>
                 	</tr>
                	</table>
+                <br />
+                <br />
+                <table width="694" align="center">
+                	<tr>
+                    	<td width="203" align="center"><a href="client.php"><img src="../img/download (4).jpg" width="158" height="158" /></a><br /><center>Client</center></td>
+                        <td width="203" align="center"><a href="item.php"><img src="../img/download (3).jpg" width="158" height="158" /></a><br /><center>Item</center></td>
+                        <td width="223" align="center"><a href="invoice.php"><img src="../img/invoice icon.png" width="158" height="158" /></a><br /><center>Invoice</center></td>
+                    </tr>
+                </table>
             </div>
         </div>
     </div>
