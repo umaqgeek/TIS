@@ -8,5 +8,5 @@ mysql_select_db($dbname) or
 die ("Error connecting to Database: ".$dbname);
 echo "Connected to Database <br />";
 
-session_start()
+session_start();
 ?>

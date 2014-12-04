@@ -22,6 +22,18 @@
 		</div>
         	<br /><br /><br />
         <div class="content">
+        	<div>
+            	<table align="center">
+                	<tr>
+                    	<td>ID</td>
+                        <td>Username</td>
+                        <td>Password</td>
+                        <td>Name</td>
+                        <td>IC</td>
+                        <td>Level</td>
+                    </tr>
+                </table>
+            </div>
         </div>
     </div>
 </body>
