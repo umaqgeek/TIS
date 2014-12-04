@@ -23,7 +23,39 @@ include('../inc/config.php');
 		</div>
         	<br /><br /><br />
         <div class="content">
-        
+        	<div>
+            	calling data from database to view,delete,update client 
+            </div>
+            <hr />
+            <div>
+            	<form action="" method="post">
+                	<table align="center">
+                    	<tr>
+                        	<td>Client Name</td>
+                     		<td>:</td>
+                            <td><input name="client" type="text" /></td>
+                        </tr>
+                        <tr>
+                        	<td>Company Name</td>
+                     		<td>:</td>
+                            <td><input name="company" type="text" /></td>
+                        </tr>
+                        <tr>
+                        	<td>Company Address</td>
+                     		<td>:</td>
+                            <td><input name="address" type="text" /></td>
+                        </tr>
+                        <tr>
+                        	<td>Phone</td>
+                     		<td>:</td>
+                            <td><input name="phone" type="text" /></td>
+                        </tr>
+                        <tr>
+                        	<td colspan="3" align="right"><input name="add" type="button" value="add" /><input name="reset" type="button" value="reset" /></td>	
+                        </tr>
+                    </table>
+                </form>
+            </div>
         </div>
     </div>
 </body>

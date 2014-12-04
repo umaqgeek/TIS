@@ -23,16 +23,51 @@
         	<br /><br /><br />
         <div class="content">
         	<div>
-            	<table align="center">
+            	<table width="550" border="1" align="center">
                 	<tr>
-                    	<td>ID</td>
-                        <td>Username</td>
-                        <td>Password</td>
-                        <td>Name</td>
-                        <td>IC</td>
-                        <td>Level</td>
+                    	<td width="17">ID</td>
+                        <td width="68">Username</td>
+                        <td width="64">Password</td>
+                        <td width="112">Name</td>
+                        <td width="109">IC</td>
+                        <td width="86">Level</td>
+                    </tr>
+                    <tr>
+                    	<td>1</td>
+                        <td>kamarul94</td>
+                        <td>marul94</td>
+                        <td>kamalrul bin rizam</td>
+                        <td>941020-01-5897</td>
+                        <td>staff</td>
                     </tr>
                 </table>
+            	<hr />
+            </div>
+            <div>
+            	<form action="" method="post">
+                	<table align="center">
+                    	<tr>
+                        	<td>Username</td>
+                        	<td></td>
+                        </tr>
+                        <tr>
+                        	<td>Password</td>
+                        	<td></td>
+                        </tr>
+                        <tr>
+                        	<td>Name</td>
+                        	<td></td>
+                        </tr>
+                        <tr>
+                        	<td>IC</td>
+                        	<td></td>
+                        </tr>
+                        <tr>
+                        	<td>Level</td>
+                        	<td></td>
+                        </tr>
+                    </table>
+                </form>
             </div>
         </div>
     </div>
