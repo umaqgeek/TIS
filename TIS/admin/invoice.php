@@ -23,7 +23,49 @@ include('../inc/config.php');
 		</div>
         	<br /><br /><br />
         <div class="content">
-        
+        	<div>
+            	<table rules="all" align="center">
+                	<tr>
+                    	<td>ID</td>
+                        <td>Date</td>
+                        <td>Invoice#</td>
+                        <td>Customer ID</td>
+                        <td>Due Date</td>
+                        <td>Bill To</td>
+                        <td>Total</td>
+                    </tr>
+                </table>
+            	<hr />
+            </div>
+            <div>
+            	<form action="" method="post">
+                	<table align="center">
+                    	<tr>
+                        	<td>Date</td>
+                        	<td><input name="date" type="date" /></td>
+                        </tr>
+                        <tr>
+                        	<td>Invoice #</td>
+                        	<td><input name="inv" type="text" /></td>
+                        </tr>
+                        <tr>
+                        	<td>Due Date</td>
+                        	<td><input name="ddate" type="date" /></td>
+                        </tr>
+                        <tr>
+                        	<td>Bill To</td>
+                        	<td><input name="bill" type="text" /></td>
+                        </tr>
+                        <tr>
+                        	<td>Total</td>
+                        	<td><input name="total" type="text" /></td>
+                        </tr>
+                        <tr>
+                        	<td colspan="2" align="right"><input name="add" type="button" value="add" /><input name="reset" type="button" value="reset" /></td>
+                        </tr>
+                    </table>                 
+                </form>
+            </div>
         </div>
     </div>
 </body>

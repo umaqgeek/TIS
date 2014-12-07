@@ -23,7 +23,38 @@ include('../inc/config.php');
 		</div>
         	<br /><br /><br />
         <div class="content">
-        
+        	<div>
+            	<table width="491" border="0" rules="all" align="center">
+                	<tr>
+                    	<td width="55">ID</td>
+                        <td width="242">Item Name</td>
+                        <td width="143">Sub Item Name</td>
+                        <td width="33">Price</td>
+                    </tr>
+                </table>
+            	<hr />
+            </div>
+            <div>
+            	<form action="" method="post">
+                	<table align="center">
+                    	<tr>
+                        	<td>Item Name</td>
+                        	<td><input name="iname" type="text" /></td>
+                        </tr>
+                        <tr>
+                        	<td>Sub Item Name</td>
+                        	<td><input name="siname" type="text" /></td>
+                        </tr>
+                        <tr>
+                        	<td>Price</td>
+                        	<td><input name="price" type="text" /></td>
+                        </tr>
+                        <tr>
+                        	<td colspan="2" align="right"><input name="add" type="button" value="add" /><input name="reset" type="button" value="reset" /></td>
+                        </tr>
+                    </table>                 
+                </form>
+            </div>
         </div>
     </div>
 </body>

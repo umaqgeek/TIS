@@ -23,21 +23,31 @@
         	<br /><br /><br />
         <div class="content">
         	<div>
-            	<table width="550" border="1" align="center">
+            	<table width="1015" border="0" rules="all" align="center">
                 	<tr>
-                    	<td width="17">ID</td>
-                        <td width="68">Username</td>
-                        <td width="64">Password</td>
-                        <td width="112">Name</td>
-                        <td width="109">IC</td>
-                        <td width="86">Level</td>
+                    	<td width="16">ID</td>
+                        <td width="64">Username</td>
+                        <td width="60">Password</td>
+                        <td width="180">Name</td>
+                        <td width="136">IC</td>
+                        <td width="207">Address</td>
+                        <td width="57">Postcode</td>
+                        <td width="83">State</td>
+                        <td width="51">County</td>
+                        <td width="80">Phone</td>
+                        <td width="35">Level</td>
                     </tr>
                     <tr>
-                    	<td>1</td>
+                    	<td height="42">1</td>
                         <td>kamarul94</td>
                         <td>marul94</td>
                         <td>kamalrul bin rizam</td>
                         <td>941020-01-5897</td>
+                        <td>MLO 2800 KAMPUNG MELAYU SEDENAK</td>
+                        <td>81010</td>
+                        <td>KULAIJAYA</td>
+                        <td>JOHOR</td>
+                        <td>0177499736</td>
                         <td>staff</td>
                     </tr>
                 </table>
@@ -48,25 +58,44 @@
                 	<table align="center">
                     	<tr>
                         	<td>Username</td>
-                        	<td></td>
+                        	<td><input name="username" type="text" /></td>
                         </tr>
                         <tr>
                         	<td>Password</td>
-                        	<td></td>
+                        	<td><input name="password" type="text" /></td>
                         </tr>
                         <tr>
                         	<td>Name</td>
-                        	<td></td>
+                        	<td><input name="name" type="text" /></td>
                         </tr>
                         <tr>
                         	<td>IC</td>
-                        	<td></td>
+                        	<td><input name="ic" type="text" /></td>
+                        </tr>
+                        <tr>
+                        	<td>Address</td>
+                        	<td><input name="addr" type="text" /></td>
+                        </tr>
+                        <tr>
+                        	<td>Postcode</td>
+                        	<td><input name="postcode" type="text" /></td>
+                        </tr>
+                        <tr>
+                        	<td>state</td>
+                        	<td><input name="state" type="text" /></td>
+                        </tr>
+                        <tr>
+                        	<td>Country</td>
+                        	<td><input name="country" type="text" /></td>
                         </tr>
                         <tr>
                         	<td>Level</td>
-                        	<td></td>
+                        	<td><input name="level" type="text" /></td>
                         </tr>
-                    </table>
+                        <tr>
+                        	<td colspan="2" align="right"><input name="add" type="button" value="add" /><input name="reset" type="button" value="reset" /></td>
+                        </tr>
+                    </table>                 
                 </form>
             </div>
         </div>

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Dec 01, 2014 at 05:51 PM
+-- Generation Time: Dec 07, 2014 at 01:15 AM
 -- Server version: 5.6.12-log
 -- PHP Version: 5.4.12
 
@@ -45,9 +45,12 @@ CREATE TABLE IF NOT EXISTS `clients` (
 
 CREATE TABLE IF NOT EXISTS `invoice` (
   `id` int(200) NOT NULL AUTO_INCREMENT,
-  `invoice_code` varchar(200) NOT NULL,
   `date` datetime NOT NULL,
+  `invoice_code` varchar(200) NOT NULL,
+  `customer_ID` varchar(200) NOT NULL,
   `due_date` datetime NOT NULL,
+  `bill_to` varchar(200) NOT NULL,
+  `total` varchar(200) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
@@ -76,6 +79,8 @@ CREATE TABLE IF NOT EXISTS `project` (
   `project_name` varchar(200) NOT NULL,
   `project_code` varchar(200) NOT NULL,
   `warranty` varchar(200) NOT NULL,
+  `start_warranty` datetime NOT NULL,
+  `end_warranty` datetime NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
@@ -91,6 +96,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `password` varchar(200) NOT NULL,
   `name` varchar(200) NOT NULL,
   `ic` varchar(200) NOT NULL,
+  `address` varchar(200) NOT NULL,
   `phone` varchar(200) NOT NULL,
   `level` varchar(200) NOT NULL,
   PRIMARY KEY (`id`)
@@ -100,8 +106,8 @@ CREATE TABLE IF NOT EXISTS `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `username`, `password`, `name`, `ic`, `phone`, `level`) VALUES
-(1, 'tuffah', 'admin', 'Tuffah Informatics', '-', '019-9737579', 'admin');
+INSERT INTO `users` (`id`, `username`, `password`, `name`, `ic`, `address`, `phone`, `level`) VALUES
+(1, 'tuffah', 'admin', 'Tuffah Informatics', '-', '-', '019-9737579', 'admin');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

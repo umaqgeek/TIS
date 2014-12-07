@@ -24,36 +24,47 @@ include('../inc/config.php');
         	<br /><br /><br />
         <div class="content">
         	<div>
-            	calling data from database to view,delete,update client 
+            	<table width="1015" border="0" rules="all" align="center">
+                	<tr>
+                    	<td width="16">ID</td>
+                        <td width="64">Client Name</td>
+                        <td width="60">Company Name</td>
+                        <td width="180">Address</td>
+                        <td width="57">Postcode</td>
+                        <td width="83">State</td>
+                        <td width="51">County</td>
+                        <td width="80">Phone</td>
+                    </tr>
+                </table>
+            	<hr />
             </div>
-            <hr />
             <div>
             	<form action="" method="post">
                 	<table align="center">
                     	<tr>
                         	<td>Client Name</td>
-                     		<td>:</td>
-                            <td><input name="client" type="text" /></td>
+                        	<td><input name="cname" type="text" /></td>
                         </tr>
                         <tr>
-                        	<td>Company Name</td>
-                     		<td>:</td>
-                            <td><input name="company" type="text" /></td>
+                        	<td>Address</td>
+                        	<td><input name="addr" type="text" /></td>
                         </tr>
                         <tr>
-                        	<td>Company Address</td>
-                     		<td>:</td>
-                            <td><input name="address" type="text" /></td>
+                        	<td>Postcode</td>
+                        	<td><input name="postcode" type="text" /></td>
                         </tr>
                         <tr>
-                        	<td>Phone</td>
-                     		<td>:</td>
-                            <td><input name="phone" type="text" /></td>
+                        	<td>state</td>
+                        	<td><input name="state" type="text" /></td>
                         </tr>
                         <tr>
-                        	<td colspan="3" align="right"><input name="add" type="button" value="add" /><input name="reset" type="button" value="reset" /></td>	
+                        	<td>Country</td>
+                        	<td><input name="country" type="text" /></td>
                         </tr>
-                    </table>
+                        <tr>
+                        	<td colspan="2" align="right"><input name="add" type="button" value="add" /><input name="reset" type="button" value="reset" /></td>
+                        </tr>
+                    </table>                 
                 </form>
             </div>
         </div>
