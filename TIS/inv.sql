@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Dec 07, 2014 at 01:15 AM
+-- Generation Time: Dec 08, 2014 at 03:45 PM
 -- Server version: 5.6.12-log
 -- PHP Version: 5.4.12
 
@@ -33,6 +33,9 @@ CREATE TABLE IF NOT EXISTS `clients` (
   `client_name` varchar(200) NOT NULL,
   `company_name` varchar(200) NOT NULL,
   `address` varchar(200) NOT NULL,
+  `postcode` varchar(200) NOT NULL,
+  `state` varchar(200) NOT NULL,
+  `county` varchar(200) NOT NULL,
   `phone` varchar(200) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
@@ -97,17 +100,21 @@ CREATE TABLE IF NOT EXISTS `users` (
   `name` varchar(200) NOT NULL,
   `ic` varchar(200) NOT NULL,
   `address` varchar(200) NOT NULL,
+  `postcode` varchar(200) NOT NULL,
+  `state` varchar(200) NOT NULL,
+  `country` varchar(200) NOT NULL,
   `phone` varchar(200) NOT NULL,
   `level` varchar(200) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `username`, `password`, `name`, `ic`, `address`, `phone`, `level`) VALUES
-(1, 'tuffah', 'admin', 'Tuffah Informatics', '-', '-', '019-9737579', 'admin');
+INSERT INTO `users` (`id`, `username`, `password`, `name`, `ic`, `address`, `postcode`, `state`, `country`, `phone`, `level`) VALUES
+(1, 'tuffah', 'admin', 'Tuffah Informatics', '-', '-', '-', '-', '-', '019-9737579', 'admin'),
+(2, 'kamarul94', 'marul94', 'Kamalrul bin Rizam', '940102-01-5897', 'MLO 2800 Kampung Melayu Sedenak', '81010', 'Kulaijaya', 'Johor', '017-7499736', 'staff');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
