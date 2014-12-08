@@ -16,8 +16,7 @@ include('../inc/config.php');
     		<ul id="menu">
         		<li><a href="index.php"><img src="../img/login logo.png" width="180" height="60" /></a></li>
                 <li><a href="manage.php">Manage System</a></li>
-        		<li><a href="#">Invoice</a></li>
-        		<li><a href="#">Contact Us</a></li>
+        		<li><a href="invoiceForm.php">Invoice</a></li>
         		<li><a href="#">Logout</a></li>
 			</ul>
 		</div>

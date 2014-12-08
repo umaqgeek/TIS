@@ -1,4 +1,17 @@
 <?php include('../inc/config.php'); ?>
+<?php
+include("../inc/connect.php");
+$name = $_POST['fname'];
+$ic = $_POST['ic'];
+$addr = $_POST['address'];
+$user = $_POST['username'];
+$pswd = $_POST['password'];
+$cpswd = $_POST['cpass'];
+mysql_query("INSERT INTO user (username, password, name, ic, address) VALUES('$user', '$pswd', '$name', '$ic', '$addr')") or die ("Error inserting data into table");
+echo "Data Inserted!";
+//Closes specified connection
+mysql_close($conn);
+?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -15,8 +28,7 @@
     		<ul id="menu">
         		<li><a href="index.php"><img src="../img/login logo.png" width="180" height="60" /></a></li>
                 <li><a href="manage.php">Manage System</a></li>
-        		<li><a href="#">Invoice</a></li>
-        		<li><a href="#">Contact Us</a></li>
+        		<li><a href="invoiceForm.php">Invoice</a></li>
         		<li><a href="#">Logout</a></li>
 			</ul>
 		</div>

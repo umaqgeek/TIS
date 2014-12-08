@@ -10,18 +10,26 @@
 			$result = mysql_query($sql) or die ('Query failed. ' . mysql_error());
 			$row= mysql_fetch_array($result, MYSQL_ASSOC);
 			
-			if (mysql_num_row($result) == 1) {
-				$_SESSION['name']=$row['name'];
-				$_SESSION['ic']=$row['ic'];
+			if (mysql_num_rows($result) == 1) {
 				$_SESSION['level']=$row['level'];
 				
-				if ($_SESSION['level']=='admin') {
+				if ($_SESSION['level'] == 'admin') {
 					header("Location:admin/index.php");
+					exit();
 				}
 				else {
-					 header("Location:staff.php");
+					 header("Location:staff/staff.php");
+					 exit();
 				}
 			}
+			else {
+				header("Location:index.php");
+				exit();
+			}
+		}
+		else {
+			header("Location:index.php");
+			exit();
 		}
 	}
 ?>

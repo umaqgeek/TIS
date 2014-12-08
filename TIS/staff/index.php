@@ -15,7 +15,7 @@ include('../inc/config.php');
     	<div class="navbar">
     		<ul id="menu">
         		<li><a href="#"><img src="../img/login logo.png" width="180" height="60" /></a></li>
-        		<li><a href="#">Invoice</a></li>
+        		<li><a href="invoiceForm.php">Invoice</a></li>
         		<li><a href="#">Logout</a></li>
 			</ul>
 		</div>
