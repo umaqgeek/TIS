@@ -31,22 +31,36 @@ include('../inc/config.php');
                         <td width="180">Address</td>
                         <td width="57">Postcode</td>
                         <td width="83">State</td>
-                        <td width="51">County</td>
+                        <td width="51">Country</td>
                         <td width="80">Phone</td>
+                    </tr>
+                    <tr>
+                    	<td width="16">&nbsp;</td>
+                        <td width="64">&nbsp;</td>
+                        <td width="60">&nbsp;</td>
+                        <td width="180">&nbsp;</td>
+                        <td width="57">&nbsp;</td>
+                        <td width="83">&nbsp;</td>
+                        <td width="51">&nbsp;</td>
+                        <td width="80">&nbsp;</td>
                     </tr>
                 </table>
             	<hr />
             </div>
             <div>
-            	<form action="" method="post">
+            	<form action="addClient.php" method="post">
                 	<table align="center">
                     	<tr>
                         	<td>Client Name</td>
-                        	<td><input name="cname" type="text" /></td>
+                        	<td><input name="client_name" type="text" /></td>
+                        </tr>
+                        <tr>
+                        	<td>Company Name</td>
+                        	<td><input name="company_name" type="text" /></td>
                         </tr>
                         <tr>
                         	<td>Address</td>
-                        	<td><input name="addr" type="text" /></td>
+                        	<td><input name="address" type="text" /></td>
                         </tr>
                         <tr>
                         	<td>Postcode</td>
@@ -61,7 +75,11 @@ include('../inc/config.php');
                         	<td><input name="country" type="text" /></td>
                         </tr>
                         <tr>
-                        	<td colspan="2" align="right"><input name="add" type="button" value="add" /><input name="reset" type="button" value="reset" /></td>
+                        	<td>Phone</td>
+                        	<td><input name="phone" type="text" /></td>
+                        </tr>
+                        <tr>
+                        	<td colspan="2" align="right"><input name="add" type="submit" value="add" /><input name="reset" type="reset" value="reset" /></td>
                         </tr>
                     </table>                 
                 </form>
