@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Dec 08, 2014 at 03:45 PM
+-- Generation Time: Dec 09, 2014 at 02:16 PM
 -- Server version: 5.6.12-log
 -- PHP Version: 5.4.12
 
@@ -106,7 +106,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `phone` varchar(200) NOT NULL,
   `level` varchar(200) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=14 ;
 
 --
 -- Dumping data for table `users`
@@ -114,7 +114,8 @@ CREATE TABLE IF NOT EXISTS `users` (
 
 INSERT INTO `users` (`id`, `username`, `password`, `name`, `ic`, `address`, `postcode`, `state`, `country`, `phone`, `level`) VALUES
 (1, 'tuffah', 'admin', 'Tuffah Informatics', '-', '-', '-', '-', '-', '019-9737579', 'admin'),
-(2, 'kamarul94', 'marul94', 'Kamalrul bin Rizam', '940102-01-5897', 'MLO 2800 Kampung Melayu Sedenak', '81010', 'Kulaijaya', 'Johor', '017-7499736', 'staff');
+(2, 'kamarul94', 'marul94', 'Kamalrul bin Rizam', '941020-01-5897', 'MLO 2800 Kampung Melayu Sedenak', '81010', 'Kulaijaya', 'Johor', '017-7499736', 'staff'),
+(3, 'ezwan10', 'wan123', 'Mohamad Ezwan Bin Mohd Shahrin', '941227-01-5915', 'No28 kampung seri maju jaya', '86100', 'ayer hitam', 'johor', '014-6241620', 'staff');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

@@ -19,7 +19,7 @@ include ('inc/config.php');
 			<center>
             	<fieldset style="width:50%">
 					<h1><?php echo $companyname; ?> Invoice System</h1>
-						<form method="post" action="login.php">
+						<form method="post" action="admin/index.php">
 							Username<br />
 							<input type="text" name="username" /><br />
 							Password<br />

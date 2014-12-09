@@ -1,16 +1,5 @@
-<?php include('../inc/config.php'); ?>
-<?php
-include("../inc/connect.php");
-$name = $_POST['fname'];
-$ic = $_POST['ic'];
-$addr = $_POST['address'];
-$user = $_POST['username'];
-$pswd = $_POST['password'];
-$cpswd = $_POST['cpass'];
-mysql_query("INSERT INTO user (username, password, name, ic, address) VALUES('$user', '$pswd', '$name', '$ic', '$addr')") or die ("Error inserting data into table");
-echo "Data Inserted!";
-//Closes specified connection
-mysql_close($conn);
+<?php 
+	include('../inc/config.php');
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -35,38 +24,38 @@ mysql_close($conn);
         	<br /><br /><br />
         <div class="content">
         	<div>
-            	<table width="1015" border="0" rules="all" align="center">
+            	<table width="1061" border="0" rules="all" align="center">
                 	<tr>
                     	<td width="16">ID</td>
-                        <td width="64">Username</td>
-                        <td width="60">Password</td>
-                        <td width="180">Name</td>
-                        <td width="136">IC</td>
-                        <td width="207">Address</td>
+                        <td width="65">Username</td>
+                        <td width="61">Password</td>
+                        <td width="185">Name</td>
+                        <td width="139">IC</td>
+                        <td width="231">Address</td>
                         <td width="57">Postcode</td>
-                        <td width="83">State</td>
-                        <td width="51">County</td>
-                        <td width="80">Phone</td>
-                        <td width="35">Level</td>
+                        <td width="67">State</td>
+                        <td width="65">County</td>
+                        <td width="88">Phone</td>
+                        <td width="41">Level</td>
                     </tr>
                     <tr>
-                    	<td height="42">1</td>
-                        <td>kamarul94</td>
-                        <td>marul94</td>
-                        <td>kamalrul bin rizam</td>
-                        <td>941020-01-5897</td>
-                        <td>MLO 2800 KAMPUNG MELAYU SEDENAK</td>
-                        <td>81010</td>
-                        <td>KULAIJAYA</td>
-                        <td>JOHOR</td>
-                        <td>0177499736</td>
-                        <td>staff</td>
+                    	<td height="42">&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
                     </tr>
                 </table>
             	<hr />
             </div>
             <div>
-            	<form action="" method="post">
+            	<form action="addStaff.php" method="post">
                 	<table align="center">
                     	<tr>
                         	<td>Username</td>
@@ -86,7 +75,7 @@ mysql_close($conn);
                         </tr>
                         <tr>
                         	<td>Address</td>
-                        	<td><input name="addr" type="text" /></td>
+                        	<td><input name="address" type="text" /></td>
                         </tr>
                         <tr>
                         	<td>Postcode</td>
@@ -101,11 +90,15 @@ mysql_close($conn);
                         	<td><input name="country" type="text" /></td>
                         </tr>
                         <tr>
+                        	<td>Phone</td>
+                        	<td><input name="phone" type="text" /></td>
+                        </tr>
+                        <tr>
                         	<td>Level</td>
                         	<td><input name="level" type="text" /></td>
                         </tr>
                         <tr>
-                        	<td colspan="2" align="right"><input name="add" type="button" value="add" /><input name="reset" type="button" value="reset" /></td>
+                        	<td colspan="2" align="right"><input name="add" type="submit" value="add" /><input name="reset" type="reset" value="reset" /></td>
                         </tr>
                     </table>                 
                 </form>
