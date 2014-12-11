@@ -52,14 +52,14 @@ include('../inc/config.php');
                         </tr>
                         <tr>
                         	<td>Start Project</td>
-                        	<td><input name="start" type="text" /></td>
+                        	<td><input name="start" type="date" /></td>
                         </tr>
                         <tr>
                         	<td>End Project</td>
-                        	<td><input name="end" type="text" /></td>
+                        	<td><input name="end" type="date" /></td>
                         </tr>
                         <tr>
-                        	<td colspan="2" align="right"><input name="add" type="button" value="add" /><input name="reset" type="button" value="reset" /></td>
+                        	<td colspan="2" align="right"><span><input name="add" type="submit" value="add" /></span><span><input name="reset" type="reset" value="reset" /></span></td>
                         </tr>
                     </table>                 
                 </form>

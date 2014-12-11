@@ -55,7 +55,7 @@
             	<hr />
             </div>
             <div>
-            	<form action="addStaff.php" method="post">
+            	<form action="../func/addStaff.php" method="post">
                 	<table align="center">
                     	<tr>
                         	<td>Username</td>
@@ -98,7 +98,7 @@
                         	<td><input name="level" type="text" /></td>
                         </tr>
                         <tr>
-                        	<td colspan="2" align="right"><input name="add" type="submit" value="add" /><input name="reset" type="reset" value="reset" /></td>
+                        	<td colspan="2" align="right"><span><input name="add" type="submit" value="add" /></span><span><input name="reset" type="reset" value="reset" /></span></td>
                         </tr>
                     </table>                 
                 </form>

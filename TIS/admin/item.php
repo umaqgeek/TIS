@@ -34,7 +34,7 @@ include('../inc/config.php');
             	<hr />
             </div>
             <div>
-            	<form action="" method="post">
+            	<form action="../func/addItems.php" method="post">
                 	<table align="center">
                     	<tr>
                         	<td>Item Name</td>
@@ -49,7 +49,7 @@ include('../inc/config.php');
                         	<td><input name="price" type="text" /></td>
                         </tr>
                         <tr>
-                        	<td colspan="2" align="right"><input name="add" type="button" value="add" /><input name="reset" type="button" value="reset" /></td>
+                        	<td colspan="2" align="right"><span><input name="add" type="submit" value="add" /></span><span><input name="reset" type="reset" value="reset" /></span></td>
                         </tr>
                     </table>                 
                 </form>

@@ -60,7 +60,7 @@ include('../inc/config.php');
                         	<td><input name="total" type="text" /></td>
                         </tr>
                         <tr>
-                        	<td colspan="2" align="right"><input name="add" type="button" value="add" /><input name="reset" type="button" value="reset" /></td>
+                        	<td colspan="2" align="right"><span><input name="add" type="button" value="add" /></span><span><input name="reset" type="button" value="reset" /></span></td>
                         </tr>
                     </table>                 
                 </form>
