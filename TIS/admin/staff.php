@@ -1,5 +1,8 @@
 <?php 
 	include('../inc/config.php');
+	
+	$sql = "SELECT * FROM users";
+	$res = mysql_query($sql);
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -26,30 +29,37 @@
         	<div>
             	<table width="1061" border="0" rules="all" align="center">
                 	<tr>
-                    	<td width="16">ID</td>
-                        <td width="65">Username</td>
-                        <td width="61">Password</td>
-                        <td width="185">Name</td>
-                        <td width="139">IC</td>
-                        <td width="231">Address</td>
-                        <td width="57">Postcode</td>
-                        <td width="67">State</td>
-                        <td width="65">County</td>
-                        <td width="88">Phone</td>
-                        <td width="41">Level</td>
-                    </tr>
-                    <tr>
-                    	<td height="42">&nbsp;</td>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
+                    	<th>ID</th>
+                        <th>Username</th>
+                        <th>Password</th>
+                        <th>Name</th>
+                        <th>IC</th>
+                        <th>Address</th>
+                        <th>Postcode</th>
+                        <th>State</th>
+                        <th>County</th>
+                        <th>Phone</th>
+                        <th>Level</th>
+                   	<tr>
+                    
+                    <?php
+						while($user = mysql_fetch_assoc($res)){
+							echo "<tr>";
+							echo "<td>".$users['id']."</td>";
+							echo "<td>".$users['username']."</td>";
+							echo "<td>".$users['password']."</td>";
+							echo "<td>".$users['name']."</td>";
+							echo "<td>".$users['ic']."</td>";
+							echo "<td>".$users['address']."</td>";
+							echo "<td>".$users['postcode']."</td>";
+							echo "<td>".$users['state']."</td>";
+							echo "<td>".$users['country']."</td>";
+							echo "<td>".$users['phone']."</td>";
+							echo "<td>".$users['level']."</td>";
+							echo "</tr>";
+						}
+					?>
+                    
                     </tr>
                 </table>
             	<hr />

@@ -15,6 +15,7 @@
 		mysql_query("INSERT INTO users (username, password, name, ic, address, postcode, state, country, level) VALUES('$username', '$password', '$name', '$ic', '$address', '$postcode', '$state', '$country', '$lvl')") or die ("Error inserting data into table");
 	
 		echo "success";
+		header('Location:../admin/staff.php');
 	
 		//Closes specified connection
 		mysql_close($conn);
