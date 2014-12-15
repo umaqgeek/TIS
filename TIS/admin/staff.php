@@ -1,8 +1,9 @@
 <?php 
 	include('../inc/config.php');
+	include('../inc/connect.php');
 	
 	$sql = "SELECT * FROM users";
-	$res = mysql_query($sql);
+	$res = mysql_query($sql) or die (mysql_error());
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -43,20 +44,26 @@
                    	<tr>
                     
                     <?php
-						while($user = mysql_fetch_assoc($res)){
+						$i=1;
+						while($users = mysql_fetch_array($res)){
 							echo "<tr>";
-							echo "<td>".$users['id']."</td>";
-							echo "<td>".$users['username']."</td>";
-							echo "<td>".$users['password']."</td>";
-							echo "<td>".$users['name']."</td>";
-							echo "<td>".$users['ic']."</td>";
-							echo "<td>".$users['address']."</td>";
-							echo "<td>".$users['postcode']."</td>";
-							echo "<td>".$users['state']."</td>";
-							echo "<td>".$users['country']."</td>";
-							echo "<td>".$users['phone']."</td>";
-							echo "<td>".$users['level']."</td>";
+							
+							echo "<td align='center'>" .$i. "</td>";
+							echo "<td align='center'>" .$users['username']. "</td>";
+							echo "<td align='center'>" .$users['password']. "</td>";
+							echo "<td align='center'>" .$users['name']. "</td>";
+							echo "<td align='center'>" .$users['ic']. "</td>";
+							echo "<td align='center'>" .$users['address']. "</td>";
+							echo "<td align='center'>" .$users['postcode']. "</td>";
+							echo "<td align='center'>" .$users['state']. "</td>";
+							echo "<td align='center'>" .$users['country']. "</td>";
+							echo "<td align='center'>" .$users['phone']. "</td>";
+							echo "<td align='center'>" .$users['level']. "</td>";
+							
+							echo "<td><a href='../func/staffdelete.php?delete=$users[id]'>delete</a></td>";
 							echo "</tr>";
+							
+							$i++;
 						}
 					?>
                     

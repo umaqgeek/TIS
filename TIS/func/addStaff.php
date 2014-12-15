@@ -12,7 +12,7 @@
 		$phone = $_POST['phone'];
 		$lvl = $_POST['level'];
 
-		mysql_query("INSERT INTO users (username, password, name, ic, address, postcode, state, country, level) VALUES('$username', '$password', '$name', '$ic', '$address', '$postcode', '$state', '$country', '$lvl')") or die ("Error inserting data into table");
+		mysql_query("INSERT INTO users (username, password, name, ic, address, postcode, state, country, phone, level) VALUES('$username', '$password', '$name', '$ic', '$address', '$postcode', '$state', '$country', $phone, '$lvl')") or die ("Error inserting data into table");
 	
 		echo "success";
 		header('Location:../admin/staff.php');
