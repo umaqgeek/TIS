@@ -1,5 +1,9 @@
 <?php
 include('../inc/config.php');
+include('../inc/connect.php');
+	
+	$sql = "SELECT * FROM clients";
+	$res = mysql_query($sql) or die (mysql_error());
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -25,26 +29,40 @@ include('../inc/config.php');
         	<div>
             	<table width="1015" border="0" rules="all" align="center">
                 	<tr>
-                    	<td width="16">ID</td>
-                        <td width="64">Client Name</td>
-                        <td width="60">Company Name</td>
-                        <td width="180">Address</td>
-                        <td width="57">Postcode</td>
-                        <td width="83">State</td>
-                        <td width="51">Country</td>
-                        <td width="80">Phone</td>
-                    </tr>
-                    <tr>
-                    	<td width="16">&nbsp;</td>
-                        <td width="64">&nbsp;</td>
-                        <td width="60">&nbsp;</td>
-                        <td width="180">&nbsp;</td>
-                        <td width="57">&nbsp;</td>
-                        <td width="83">&nbsp;</td>
-                        <td width="51">&nbsp;</td>
-                        <td width="80">&nbsp;</td>
+                    	<th>ID</th>
+                        <th>Client Name</th>
+                        <th>Company Name</th>
+                        <th>Address</th>
+                        <th>Postcode</th>
+                        <th>State</th>
+                        <th>Country</th>
+                        <th>Phone</th>
+                   	<tr>
+                    
+                    <?php
+						$i=1;
+						while($clients = mysql_fetch_array($res)){
+							echo "<tr>";
+							
+							echo "<td align='center'>" .$i. "</td>";
+							echo "<td align='center'>" .$clients['client_name']. "</td>";
+							echo "<td align='center'>" .$clients['company_name']. "</td>";
+							echo "<td align='center'>" .$clients['address']. "</td>";
+							echo "<td align='center'>" .$clients['postcode']. "</td>";
+							echo "<td align='center'>" .$clients['state']. "</td>";
+							echo "<td align='center'>" .$clients['country']. "</td>";
+							echo "<td align='center'>" .$clients['phone']. "</td>";
+							
+							echo "<td><a href='../func/clientdelete.php?delete=$clients[id]'>delete</a></td>";
+							echo "</tr>";
+							
+							$i++;
+						}
+					?>
+                    
                     </tr>
                 </table>
+                <hr />
             	<hr />
             </div>
             <div>

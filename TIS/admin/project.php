@@ -1,5 +1,9 @@
 <?php
 include('../inc/config.php');
+include('../inc/connect.php');
+	
+	$sql = "SELECT * FROM project";
+	$res = mysql_query($sql) or die (mysql_error());
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -25,26 +29,47 @@ include('../inc/config.php');
         	<div>
             	<table width="550" border="0" rules="all" align="center">
                 	<tr>
-                    	<td width="16">ID</td>
-                        <td width="57">Project</td>
-                        <td width="91">Project Code</td>
-                        <td width="102">Warannty</td>
-                        <td width="104">Start Project</td>
-                        <td width="154">End Project</td>
+                    	<th>ID</th>
+                        <th>Project</th>
+                        <th>Project Code</th>
+                        <th>Warannty</th>
+                        <th>Start Project</th>
+                        <th>End Project</th>
+                    <tr>
+                    <?php
+						$i=1;
+						while($project = mysql_fetch_array($res)){
+							echo "<tr>";
+							
+							echo "<td align='center'>" .$i. "</td>";
+							echo "<td align='center'>" .$project['project_name']. "</td>";
+							echo "<td align='center'>" .$project['project_code']. "</td>";
+							echo "<td align='center'>" .$project['warranty']. "</td>";
+							echo "<td align='center'>" .$project['start_warranty']. "</td>";
+							echo "<td align='center'>" .$project['end_warranty']. "</td>";
+							
+							echo "<td><a href='../func/projectdelete.php?delete=$project[id]'>delete</a></td>";
+							echo "</tr>";
+							
+							$i++;
+						}
+					?>
+                    
                     </tr>
                 </table>
+                <hr />
             	<hr />
             </div>
             <div>
-            	<form action="" method="post">
+            	<form action="../func/addProject.php" method="post">
                 	<table align="center">
                     	<tr>
                         	<td>Project</td>
-                        	<td><input name="pname" type="text" /></td>
+                        	<td><input name="project_name" type="text" /></td>
                         </tr>
                         <tr>
                         	<td>Project Code</td>
-                        	<td><input name="pcode" type="text" /></td>
+                        	<td><input name="project_code" type="text" /></td>
                         </tr>
                         <tr>
                         	<td>Warranty</td>
@@ -52,11 +77,11 @@ include('../inc/config.php');
                         </tr>
                         <tr>
                         	<td>Start Project</td>
-                        	<td><input name="start" type="date" /></td>
+                        	<td><input name="start_warranty" type="date" /></td>
                         </tr>
                         <tr>
                         	<td>End Project</td>
-                        	<td><input name="end" type="date" /></td>
+                        	<td><input name="end_warranty" type="date" /></td>
                         </tr>
                         <tr>
                         	<td colspan="2" align="right"><span><input name="add" type="submit" value="add" /></span><span><input name="reset" type="reset" value="reset" /></span></td>

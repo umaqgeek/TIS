@@ -12,6 +12,7 @@
 		mysql_query("INSERT INTO clients (client_name, company_name, address, postcode, state, country, phone) VALUES('$client_name', '$company_name', '$address', '$postcode', '$state', '$country', '$phone')") or die ("Error inserting data into table");
 	
 		echo "success";
+		header("Location:../admin/client.php");
 	
 		//Closes specified connection
 		mysql_close($conn);
