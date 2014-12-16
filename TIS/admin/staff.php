@@ -61,6 +61,7 @@
 							echo "<td align='center'>" .$users['level']. "</td>";
 							
 							echo "<td><a href='../func/staffdelete.php?delete=$users[id]'>delete</a></td>";
+							echo "<td><a href='../func/staffdelete.php?delete=$users[id]'>modifed</a></td>";
 							echo "</tr>";
 							
 							$i++;

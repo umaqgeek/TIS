@@ -1,5 +1,12 @@
 <?php
 include('../inc/config.php');
+include('../inc/connect.php');
+	
+	$sql = "SELECT * FROM item";
+	$sql1 = "SELECT * FROM subitem";
+	
+	$res = mysql_query($sql) or die (mysql_error());
+	$res1 = mysql_query($sql1) or die (mysql_error());
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -23,26 +30,57 @@ include('../inc/config.php');
         	<br /><br /><br />
         <div class="content">
         	<div>
-            	<table width="491" border="0" rules="all" align="center">
+            <table width="1061" border="0" rules="all" align="center">
                 	<tr>
-                    	<td width="55">ID</td>
-                        <td width="242">Item Name</td>
-                        <td width="143">Sub Item Name</td>
-                        <td width="33">Price</td>
+                    	<th>ID</th>
+                        <th>Item Name</th>
+                        <th>Sub Item</th>
+                        <th>Quantity</th>
+                        <th>Price</th>
+                   	<tr>
+                    
+                    <?php
+						$i=1;
+						while($item = mysql_fetch_array($res)){
+							while($subitem = mysql_fetch_array($res1)){
+								echo "<tr>";
+							
+								echo "<td align='center'>" .$i. "</td>";
+								echo "<td align='center'>" .$item['item_name']. "</td>";
+								echo "<td align='center'>" .$subitem['sub_name']. "</td>";
+								echo "<td align='center'>" .$subitem['quantity']. "</td>";
+								echo "<td align='center'>" .$subitem['price']. "</td>";
+							
+								echo "</tr>";
+							
+							$i++;
+							}
+						}
+					?>
+                    
                     </tr>
                 </table>
+                <hr />
             	<hr />
             </div>
             <div>
             	<form action="../func/addItems.php" method="post">
                 	<table align="center">
                     	<tr>
-                        	<td>Item Name</td>
-                        	<td><input name="iname" type="text" /></td>
+                        	<td>Id Item</td>
+                        	<td><input name="item_id" type="text" /></td>
                         </tr>
                         <tr>
-                        	<td>Sub Item Name</td>
-                        	<td><input name="siname" type="text" /></td>
+                        	<td>Item Name</td>
+                        	<td><input name="item_name" type="text" /></td>
+                        </tr>
+                        <tr>
+                        	<td>Sub Item</td>
+                        	<td><input name="sub_name" type="text" /></td>
+                        </tr>
+                        <tr>
+                        	<td>Quantity</td>
+                        	<td><input name="quantity" type="text" /></td>
                         </tr>
                         <tr>
                         	<td>Price</td>

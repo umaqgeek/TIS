@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Dec 09, 2014 at 02:16 PM
+-- Generation Time: Dec 16, 2014 at 02:56 PM
 -- Server version: 5.6.12-log
 -- PHP Version: 5.4.12
 
@@ -35,10 +35,10 @@ CREATE TABLE IF NOT EXISTS `clients` (
   `address` varchar(200) NOT NULL,
   `postcode` varchar(200) NOT NULL,
   `state` varchar(200) NOT NULL,
-  `county` varchar(200) NOT NULL,
+  `country` varchar(200) NOT NULL,
   `phone` varchar(200) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
 -- --------------------------------------------------------
 
@@ -64,11 +64,9 @@ CREATE TABLE IF NOT EXISTS `invoice` (
 --
 
 CREATE TABLE IF NOT EXISTS `item` (
-  `id` int(200) NOT NULL AUTO_INCREMENT,
+  `item_id` int(200) NOT NULL AUTO_INCREMENT,
   `item_name` varchar(200) NOT NULL,
-  `subitem_name` varchar(200) NOT NULL,
-  `price` varchar(200) NOT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`item_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
@@ -82,9 +80,25 @@ CREATE TABLE IF NOT EXISTS `project` (
   `project_name` varchar(200) NOT NULL,
   `project_code` varchar(200) NOT NULL,
   `warranty` varchar(200) NOT NULL,
-  `start_warranty` datetime NOT NULL,
-  `end_warranty` datetime NOT NULL,
+  `start_warranty` date NOT NULL,
+  `end_warranty` date NOT NULL,
   PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `subitem`
+--
+
+CREATE TABLE IF NOT EXISTS `subitem` (
+  `item_id` int(200) NOT NULL,
+  `sub_id` int(200) NOT NULL AUTO_INCREMENT,
+  `sub_name` varchar(200) NOT NULL,
+  `quantity` varchar(200) NOT NULL,
+  `price` varchar(200) NOT NULL,
+  PRIMARY KEY (`sub_id`),
+  UNIQUE KEY `item_id` (`item_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
@@ -106,16 +120,26 @@ CREATE TABLE IF NOT EXISTS `users` (
   `phone` varchar(200) NOT NULL,
   `level` varchar(200) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=14 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=11 ;
 
 --
 -- Dumping data for table `users`
 --
 
 INSERT INTO `users` (`id`, `username`, `password`, `name`, `ic`, `address`, `postcode`, `state`, `country`, `phone`, `level`) VALUES
-(1, 'tuffah', 'admin', 'Tuffah Informatics', '-', '-', '-', '-', '-', '019-9737579', 'admin'),
-(2, 'kamarul94', 'marul94', 'Kamalrul bin Rizam', '941020-01-5897', 'MLO 2800 Kampung Melayu Sedenak', '81010', 'Kulaijaya', 'Johor', '017-7499736', 'staff'),
-(3, 'ezwan10', 'wan123', 'Mohamad Ezwan Bin Mohd Shahrin', '941227-01-5915', 'No28 kampung seri maju jaya', '86100', 'ayer hitam', 'johor', '014-6241620', 'staff');
+(1, 'tuffah', 'admin', 'Tuffah Informatics', '-', '-', '-', '-', '-', '+6019-9737579', 'admin'),
+(9, 'kamarul94', 'marul94', 'Kamarul Bin Rizam', '941020-01-5897', 'MLO 2800 Kampung melayu sedenak', '81010', 'kulaijaya', 'johor', '+6017-7499736', 'staff'),
+(10, 'ezwan10', 'wan123', 'Mohamad Ezwan Bin Mohd Shahrin', '941227-01-5915', 'No28 Kg Seri Maju Jaya machap', '86100', 'ayer hitam', 'johor', '+6014-6241620', 'staff');
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `subitem`
+--
+ALTER TABLE `subitem`
+  ADD CONSTRAINT `subitem_ibfk_1` FOREIGN KEY (`item_id`) REFERENCES `item` (`item_id`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
