@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Dec 16, 2014 at 02:56 PM
+-- Generation Time: Dec 17, 2014 at 03:05 AM
 -- Server version: 5.6.12-log
 -- PHP Version: 5.4.12
 
@@ -38,7 +38,7 @@ CREATE TABLE IF NOT EXISTS `clients` (
   `country` varchar(200) NOT NULL,
   `phone` varchar(200) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
 
 -- --------------------------------------------------------
 
@@ -83,7 +83,7 @@ CREATE TABLE IF NOT EXISTS `project` (
   `start_warranty` date NOT NULL,
   `end_warranty` date NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
 
 -- --------------------------------------------------------
 
@@ -92,14 +92,14 @@ CREATE TABLE IF NOT EXISTS `project` (
 --
 
 CREATE TABLE IF NOT EXISTS `subitem` (
+  `sub_id` int(200) NOT NULL,
   `item_id` int(200) NOT NULL,
-  `sub_id` int(200) NOT NULL AUTO_INCREMENT,
   `sub_name` varchar(200) NOT NULL,
   `quantity` varchar(200) NOT NULL,
   `price` varchar(200) NOT NULL,
   PRIMARY KEY (`sub_id`),
   UNIQUE KEY `item_id` (`item_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 

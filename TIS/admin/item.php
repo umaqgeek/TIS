@@ -30,10 +30,32 @@ include('../inc/connect.php');
         	<br /><br /><br />
         <div class="content">
         	<div>
-            <table width="1061" border="0" rules="all" align="center">
+            <table align="center" rules="all">
+            		<tr>
+                		<th>Item Id</th>
+                    	<th>Item Name</th>
+                	<tr>
+                
+                	<?php
+						while($item = mysql_fetch_array($res)){
+							
+							echo "<tr>";
+							
+							echo "<td align='center'>" .$item['item_id']. "</td>";
+							echo "<td align='center'>" .$item['item_name']. "</td>";
+							echo "</tr>";
+						
+						}
+					?>
+                    
+                    </tr>
+                </table>
+                <hr />
+            	<hr />
+            <table width="100%" rules="all" align="center">
                 	<tr>
                     	<th>ID</th>
-                        <th>Item Name</th>
+                        <th>Item Id</th>
                         <th>Sub Item</th>
                         <th>Quantity</th>
                         <th>Price</th>
@@ -41,20 +63,20 @@ include('../inc/connect.php');
                     
                     <?php
 						$i=1;
-						while($item = mysql_fetch_array($res)){
-							while($subitem = mysql_fetch_array($res1)){
-								echo "<tr>";
+						while($sub = mysql_fetch_array($res1)){
 							
-								echo "<td align='center'>" .$i. "</td>";
-								echo "<td align='center'>" .$item['item_name']. "</td>";
-								echo "<td align='center'>" .$subitem['sub_name']. "</td>";
-								echo "<td align='center'>" .$subitem['quantity']. "</td>";
-								echo "<td align='center'>" .$subitem['price']. "</td>";
+							echo "<tr>";
 							
-								echo "</tr>";
+							echo "<td align='center'>" .$i. "</td>";
+							echo "<td align='center'>" .$item['item_name']. "</td>";
+							echo "<td align='center'>" .$sub['sub_name']. "</td>";
+							echo "<td align='center'>" .$sub['quantity']. "</td>";
+							echo "<td align='center'>" .$sub['price']. "</td>";
+							
+							echo "</tr>";
 							
 							$i++;
-							}
+						
 						}
 					?>
                     
@@ -64,15 +86,36 @@ include('../inc/connect.php');
             	<hr />
             </div>
             <div>
-            	<form action="../func/addItems.php" method="post">
+            	<form action="../func/addItem.php" method="post">
                 	<table align="center">
-                    	<tr>
-                        	<td>Id Item</td>
-                        	<td><input name="item_id" type="text" /></td>
-                        </tr>
                         <tr>
                         	<td>Item Name</td>
                         	<td><input name="item_name" type="text" /></td>
+                        </tr>
+                        <tr>
+                        	<td colspan="2" align="right"><span><input name="add" type="submit" value="add" /></span><span><input name="reset" type="reset" value="reset" /></span></td>
+                        </tr>
+                     </table>
+                     </form>
+                     <br />
+             	<form action="../func/addSub.php" method="post">
+                     <table align="center">
+                     	<tr>
+                        	<td>Item Id</td>
+                        	<td>
+                            	<select name="select">
+                            		<option>----</option>
+                                    <?php 
+										require('../inc/connect.php');
+										
+										$sql2 = "SELECT * FROM item";
+										$res2 = mysql_query($sql2) or die (mysql_error());
+										while($allitem = mysql_fetch_array($res2)){
+											?>
+                                            <option id="<?php echo $allitem['item_id'];?>"><?php echo $allitem['item_id'] ?></option>
+                                            <?php } ?>
+                            	</select>
+                              </td>
                         </tr>
                         <tr>
                         	<td>Sub Item</td>

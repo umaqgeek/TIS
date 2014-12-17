@@ -23,17 +23,18 @@ include('../inc/config.php');
         	<br /><br /><br />
         <div class="content">
         	<div>
-            	<table rules="all" align="center">
+            	<table width="100%" rules="all" align="center">
                 	<tr>
-                    	<td>ID</td>
-                        <td>Date</td>
-                        <td>Invoice#</td>
-                        <td>Customer ID</td>
-                        <td>Due Date</td>
-                        <td>Bill To</td>
-                        <td>Total</td>
+                    	<th>ID</th>
+                        <th>Date</th>
+                        <th>Invoice#</th>
+                        <th>Customer ID</th>
+                        <th>Due Date</th>
+                        <th>Bill To</th>
+                        <th>Total</th>
                     </tr>
                 </table>
+                <hr />
             	<hr />
             </div>
             <div>

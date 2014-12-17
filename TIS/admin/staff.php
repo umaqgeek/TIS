@@ -28,7 +28,7 @@
         	<br /><br /><br />
         <div class="content">
         	<div>
-            	<table width="1061" border="0" rules="all" align="center">
+            	<table width="100%" border="0" rules="all" align="center">
                 	<tr>
                     	<th>ID</th>
                         <th>Username</th>
