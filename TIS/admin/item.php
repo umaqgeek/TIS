@@ -43,6 +43,9 @@ include('../inc/connect.php');
 							
 							echo "<td align='center'>" .$item['item_id']. "</td>";
 							echo "<td align='center'>" .$item['item_name']. "</td>";
+							
+							echo "<td><a href='../func/itemdelete.php?delete=$item[item_id]'>delete</a></td>";
+							
 							echo "</tr>";
 						
 						}
@@ -68,10 +71,12 @@ include('../inc/connect.php');
 							echo "<tr>";
 							
 							echo "<td align='center'>" .$i. "</td>";
-							echo "<td align='center'>" .$item['item_name']. "</td>";
+							echo "<td align='center'>" .$sub['item_id']. "</td>";
 							echo "<td align='center'>" .$sub['sub_name']. "</td>";
 							echo "<td align='center'>" .$sub['quantity']. "</td>";
 							echo "<td align='center'>" .$sub['price']. "</td>";
+							
+							echo "<td><a href='../func/subdelete.php?delete=$sub[sub_id]'>delete</a></td>";
 							
 							echo "</tr>";
 							
@@ -108,9 +113,9 @@ include('../inc/connect.php');
                                     <?php 
 										require('../inc/connect.php');
 										
-										$sql2 = "SELECT * FROM item";
-										$res2 = mysql_query($sql2) or die (mysql_error());
-										while($allitem = mysql_fetch_array($res2)){
+										$sql = "SELECT * FROM item";
+										$res = mysql_query($sql) or die (mysql_error());
+										while($allitem = mysql_fetch_array($res)){
 											?>
                                             <option id="<?php echo $allitem['item_id'];?>"><?php echo $allitem['item_id'] ?></option>
                                             <?php } ?>
