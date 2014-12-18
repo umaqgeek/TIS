@@ -38,17 +38,18 @@ include('../inc/connect.php');
                     <tr>
                     <?php
 						$i=1;
-						while($project = mysql_fetch_array($res)){
+						while($pro = mysql_fetch_array($res)){
 							echo "<tr>";
 							
 							echo "<td align='center'>" .$i. "</td>";
-							echo "<td align='center'>" .$project['project_name']. "</td>";
-							echo "<td align='center'>" .$project['project_code']. "</td>";
-							echo "<td align='center'>" .$project['warranty']. "</td>";
-							echo "<td align='center'>" .$project['start_warranty']. "</td>";
-							echo "<td align='center'>" .$project['end_warranty']. "</td>";
+							echo "<td align='center'>" .$pro['project_name']. "</td>";
+							echo "<td align='center'>" .$pro['project_code']. "</td>";
+							echo "<td align='center'>" .$pro['warranty']. "</td>";
+							echo "<td align='center'>" .$pro['start_warranty']. "</td>";
+							echo "<td align='center'>" .$pro['end_warranty']. "</td>";
 							
-							echo "<td><a href='../func/projectdelete.php?delete=$project[id]'>delete</a></td>";
+							echo "<td><a href='../func/projectmodify.php?modify=$pro[id]'>modify</a></td>";
+							echo "<td><a href='../func/projectdelete.php?delete=$pro[id]'>delete</a></td>";
 							echo "</tr>";
 							
 							$i++;

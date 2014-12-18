@@ -41,19 +41,21 @@ include('../inc/connect.php');
                     
                     <?php
 						$i=1;
-						while($clients = mysql_fetch_array($res)){
+						while($client = mysql_fetch_array($res)){
 							echo "<tr>";
 							
 							echo "<td align='center'>" .$i. "</td>";
-							echo "<td align='center'>" .$clients['client_name']. "</td>";
-							echo "<td align='center'>" .$clients['company_name']. "</td>";
-							echo "<td align='center'>" .$clients['address']. "</td>";
-							echo "<td align='center'>" .$clients['postcode']. "</td>";
-							echo "<td align='center'>" .$clients['state']. "</td>";
-							echo "<td align='center'>" .$clients['country']. "</td>";
-							echo "<td align='center'>" .$clients['phone']. "</td>";
+							echo "<td align='center'>" .$client['client_name']. "</td>";
+							echo "<td align='center'>" .$client['company_name']. "</td>";
+							echo "<td align='center'>" .$client['address']. "</td>";
+							echo "<td align='center'>" .$client['postcode']. "</td>";
+							echo "<td align='center'>" .$client['state']. "</td>";
+							echo "<td align='center'>" .$client['country']. "</td>";
+							echo "<td align='center'>" .$client['phone']. "</td>";
 							
-							echo "<td><a href='../func/clientdelete.php?delete=$clients[id]'>delete</a></td>";
+							echo "<td><a href='../func/clientmodify.php?modify=$client[id]'>modify</a></td>";
+							echo "<td><a href='../func/clientdelete.php?delete=$client[id]'>delete</a></td>";
+							
 							echo "</tr>";
 							
 							$i++;

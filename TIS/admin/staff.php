@@ -1,6 +1,6 @@
-<?php 
-	include('../inc/config.php');
-	include('../inc/connect.php');
+<?php
+include('../inc/config.php');
+include('../inc/connect.php');
 	
 	$sql = "SELECT * FROM users";
 	$res = mysql_query($sql) or die (mysql_error());
@@ -10,11 +10,10 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title><?php echo $companyname; ?> - Staff</title>
+<title><?php echo $companyname; ?> - Manage System</title>
 <link rel="stylesheet" href="../style/style.css" type="text/css" />
 </head>
 
-<body>
 <body>
 	<div class="main">
     	<div class="navbar">
@@ -30,6 +29,9 @@
         	<div>
             	<table width="100%" border="0" rules="all" align="center">
                 	<tr>
+                    	<th colspan="13">USERS</th>
+                    </tr>
+                	<tr>
                     	<th>ID</th>
                         <th>Username</th>
                         <th>Password</th>
@@ -38,30 +40,31 @@
                         <th>Address</th>
                         <th>Postcode</th>
                         <th>State</th>
-                        <th>County</th>
+                        <th>Country</th>
                         <th>Phone</th>
                         <th>Level</th>
                    	<tr>
                     
                     <?php
 						$i=1;
-						while($users = mysql_fetch_array($res)){
+						while($user = mysql_fetch_array($res)){
 							echo "<tr>";
 							
 							echo "<td align='center'>" .$i. "</td>";
-							echo "<td align='center'>" .$users['username']. "</td>";
-							echo "<td align='center'>" .$users['password']. "</td>";
-							echo "<td align='center'>" .$users['name']. "</td>";
-							echo "<td align='center'>" .$users['ic']. "</td>";
-							echo "<td align='center'>" .$users['address']. "</td>";
-							echo "<td align='center'>" .$users['postcode']. "</td>";
-							echo "<td align='center'>" .$users['state']. "</td>";
-							echo "<td align='center'>" .$users['country']. "</td>";
-							echo "<td align='center'>" .$users['phone']. "</td>";
-							echo "<td align='center'>" .$users['level']. "</td>";
+							echo "<td align='center'>" .$user['username']. "</td>";
+							echo "<td align='center'>" .$user['password']. "</td>";
+							echo "<td align='center'>" .$user['name']. "</td>";
+							echo "<td align='center'>" .$user['ic']. "</td>";
+							echo "<td align='center'>" .$user['address']. "</td>";
+							echo "<td align='center'>" .$user['postcode']. "</td>";
+							echo "<td align='center'>" .$user['state']. "</td>";
+							echo "<td align='center'>" .$user['country']. "</td>";
+							echo "<td align='center'>" .$user['phone']. "</td>";
+							echo "<td align='center'>" .$user['level']. "</td>";
 							
-							echo "<td><a href='../func/staffdelete.php?delete=$users[id]'>delete</a></td>";
-							echo "<td><a href='../func/staffdelete.php?delete=$users[id]'>modifed</a></td>";
+							echo "<td align='center'><a href='../func/usermodify.php?modify=$user[id]'>modify</a></td>";
+							echo "<td align='center'><a href='../func/userdelete.php?delete=$user[id]'>delete</a></td>";
+							
 							echo "</tr>";
 							
 							$i++;
@@ -74,17 +77,18 @@
             	<hr />
             </div>
             <div>
-            	<form action="../func/addStaff.php" method="post">
+            	<form action="../func/addUser.php" method="post">
                 	<table align="center">
+                    	<th colspan="2">ADD USERS</th>
                     	<tr>
                         	<td>Username</td>
                         	<td><input name="username" type="text" /></td>
                         </tr>
-                        <tr>
+                    	<tr>
                         	<td>Password</td>
                         	<td><input name="password" type="text" /></td>
                         </tr>
-                        <tr>
+                    	<tr>
                         	<td>Name</td>
                         	<td><input name="name" type="text" /></td>
                         </tr>
