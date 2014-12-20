@@ -44,6 +44,7 @@ include('../inc/connect.php');
 							echo "<td align='center'>" .$item['item_id']. "</td>";
 							echo "<td align='center'>" .$item['item_name']. "</td>";
 							
+							echo "<td><a href='../func/itemmodify.php?modify=$item[item_id]'>modify</a></td>";
 							echo "<td><a href='../func/itemdelete.php?delete=$item[item_id]'>delete</a></td>";
 							
 							echo "</tr>";
@@ -108,18 +109,18 @@ include('../inc/connect.php');
                      	<tr>
                         	<td>Item Id</td>
                         	<td>
-                            	<select name="select">
-                            		<option>----</option>
-                                    <?php 
-										require('../inc/connect.php');
+                            	<?php
+                                	$sql = "SELECT * FROM item ORDER BY item_id";
+									$res = mysql_query ($sql) or die (mysql_error());
+									
+									echo "<select name=item_id value=''>Select Item Id</option>";
 										
-										$sql = "SELECT * FROM item";
-										$res = mysql_query($sql) or die (mysql_error());
-										while($allitem = mysql_fetch_array($res)){
-											?>
-                                            <option id="<?php echo $allitem['item_id'];?>"><?php echo $allitem['item_id'] ?></option>
-                                            <?php } ?>
-                            	</select>
+										while($item_sub = mysql_fetch_array($res)){
+											echo "<option value=$item_sub[item_id]>$item_sub[item_name]</option>";
+											}
+									
+									echo "</select>";
+								?>
                               </td>
                         </tr>
                         <tr>
