@@ -1,5 +1,9 @@
 <?php
 include('../inc/config.php');
+include('../inc/connect.php');
+	
+	$sql = "SELECT * FROM invoice";
+	$res = mysql_query($sql) or die (mysql_error());
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -32,6 +36,28 @@ include('../inc/config.php');
                         <th>Due Date</th>
                         <th>Bill To</th>
                         <th>Total</th>
+                    <tr>
+                    <?php
+						$i=1;
+						while($inv = mysql_fetch_array($res)){
+							echo "<tr>";
+							
+							echo "<td align='center'>" .$i. "</td>";
+							echo "<td align='center'>" .$inv['date']. "</td>";
+							echo "<td align='center'>" .$inv['invoice_code']. "</td>";
+							echo "<td align='center'>" .$inv['customer_ID']. "</td>";
+							echo "<td align='center'>" .$inv['due_date']. "</td>";
+							echo "<td align='center'>" .$inv['bill_to']. "</td>";
+							echo "<td align='center'>" .$inv['total']. "</td>";
+							
+							echo "<td align='center'><a href='../func/usermodify.php?modify=$inv[id]'>modify</a></td>";
+							echo "<td align='center'><a href='../func/userdelete.php?delete=$inv[id]'>delete</a></td>";
+							
+							echo "</tr>";
+							
+							$i++;
+						}
+					?>
                     </tr>
                 </table>
                 <hr />

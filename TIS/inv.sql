@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Dec 17, 2014 at 03:05 AM
+-- Generation Time: Dec 22, 2014 at 02:47 PM
 -- Server version: 5.6.12-log
 -- PHP Version: 5.4.12
 
@@ -38,7 +38,7 @@ CREATE TABLE IF NOT EXISTS `clients` (
   `country` varchar(200) NOT NULL,
   `phone` varchar(200) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -48,10 +48,10 @@ CREATE TABLE IF NOT EXISTS `clients` (
 
 CREATE TABLE IF NOT EXISTS `invoice` (
   `id` int(200) NOT NULL AUTO_INCREMENT,
-  `date` datetime NOT NULL,
+  `date` date NOT NULL,
   `invoice_code` varchar(200) NOT NULL,
   `customer_ID` varchar(200) NOT NULL,
-  `due_date` datetime NOT NULL,
+  `due_date` date NOT NULL,
   `bill_to` varchar(200) NOT NULL,
   `total` varchar(200) NOT NULL,
   PRIMARY KEY (`id`)
@@ -66,8 +66,18 @@ CREATE TABLE IF NOT EXISTS `invoice` (
 CREATE TABLE IF NOT EXISTS `item` (
   `item_id` int(200) NOT NULL AUTO_INCREMENT,
   `item_name` varchar(200) NOT NULL,
-  PRIMARY KEY (`item_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+  PRIMARY KEY (`item_id`),
+  UNIQUE KEY `item_id` (`item_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+
+--
+-- Dumping data for table `item`
+--
+
+INSERT INTO `item` (`item_id`, `item_name`) VALUES
+(1, 'archery'),
+(3, 'arrow'),
+(4, 'accessories');
 
 -- --------------------------------------------------------
 
@@ -83,7 +93,7 @@ CREATE TABLE IF NOT EXISTS `project` (
   `start_warranty` date NOT NULL,
   `end_warranty` date NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -92,14 +102,23 @@ CREATE TABLE IF NOT EXISTS `project` (
 --
 
 CREATE TABLE IF NOT EXISTS `subitem` (
-  `sub_id` int(200) NOT NULL,
+  `sub_id` int(200) NOT NULL AUTO_INCREMENT,
   `item_id` int(200) NOT NULL,
   `sub_name` varchar(200) NOT NULL,
   `quantity` varchar(200) NOT NULL,
   `price` varchar(200) NOT NULL,
   PRIMARY KEY (`sub_id`),
-  UNIQUE KEY `item_id` (`item_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  KEY `item_id` (`item_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=28 ;
+
+--
+-- Dumping data for table `subitem`
+--
+
+INSERT INTO `subitem` (`sub_id`, `item_id`, `sub_name`, `quantity`, `price`) VALUES
+(25, 1, 'compound bow', '1', 'RM2576'),
+(26, 3, 'carbon arrow', '1', 'RM250'),
+(27, 4, 'release', '1', 'RM190');
 
 -- --------------------------------------------------------
 
@@ -120,7 +139,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `phone` varchar(200) NOT NULL,
   `level` varchar(200) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=11 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=14 ;
 
 --
 -- Dumping data for table `users`
@@ -128,8 +147,8 @@ CREATE TABLE IF NOT EXISTS `users` (
 
 INSERT INTO `users` (`id`, `username`, `password`, `name`, `ic`, `address`, `postcode`, `state`, `country`, `phone`, `level`) VALUES
 (1, 'tuffah', 'admin', 'Tuffah Informatics', '-', '-', '-', '-', '-', '+6019-9737579', 'admin'),
-(9, 'kamarul94', 'marul94', 'Kamarul Bin Rizam', '941020-01-5897', 'MLO 2800 Kampung melayu sedenak', '81010', 'kulaijaya', 'johor', '+6017-7499736', 'staff'),
-(10, 'ezwan10', 'wan123', 'Mohamad Ezwan Bin Mohd Shahrin', '941227-01-5915', 'No28 Kg Seri Maju Jaya machap', '86100', 'ayer hitam', 'johor', '+6014-6241620', 'staff');
+(9, 'kamarul9', 'marul94', 'Kamarul Bin Rizam', '941020-01-5897', 'MLO 2800 Kampung Melayu Sedenak', '81010', 'Kulaijaya', 'Johor', '+6017-7499736', 'staff'),
+(13, 'ezwan94', 'wan123', 'Mohamad Ezwan Bin Mohd Shahrin', '941227-01-5915', 'NO 28 Kg Seri Maju Jaya machap', '86100', 'Ayer Hitam', 'Johor', '+6014-6241602', 'staff');
 
 --
 -- Constraints for dumped tables

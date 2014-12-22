@@ -6,7 +6,7 @@ include('../inc/config.php');
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title><?php echo $companyname; ?> - Manage System</title>
+<title><?php echo $companyname; ?> - Invoice</title>
 <link rel="stylesheet" href="../style/style.css" type="text/css" />
 </head>
 
@@ -22,7 +22,33 @@ include('../inc/config.php');
 		</div>
         	<br /><br /><br />
         <div class="content">
-        
+        	<div>
+            	<h1 align="center">INVOICE</h1>
+                <br />
+                <center>
+                	Project Type :
+                	<select>
+                		<option id="0">======</option>
+                    	<option id="1">project 1</option>
+                	</select>
+                    <br />
+                    <br />
+                    Customer ID :
+                	<select>
+                		<option id="0">======</option>
+                    	<option id="1">cuctomer 1</option>
+                	</select>
+                </center>
+                <br />
+            	<table align="center" width="73%" border="1" bordercolor="#000000">
+                	<tr>
+                    	<td width="3%">No</td>
+                        <td width="83%">Description</td>
+                        <td width="7%">Quantity</td>
+                        <td width="7%">Price</td>
+                    </tr>
+                </table>
+            </div>
         </div>
     </div>
 </body>
