@@ -1,5 +1,10 @@
 <?php
 include('../inc/config.php');
+include('../inc/connect.php');
+	
+	$sql = "SELECT * FROM item";
+	
+	$res = mysql_query($sql) or die (mysql_error());
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -42,11 +47,30 @@ include('../inc/config.php');
                 <br />
             	<table align="center" width="73%" border="1" bordercolor="#000000">
                 	<tr>
-                    	<td width="3%">No</td>
-                        <td width="83%">Description</td>
-                        <td width="7%">Quantity</td>
-                        <td width="7%">Price</td>
-                    </tr>
+                    	<th width="3%">No</th>
+                        <th width="83%">Description</th>
+                        <th width="7%">Quantity</th>
+                        <th width="7%">Price</th>
+                    <tr>
+                    	<?php 
+							$i=1;
+								while($a = mysql_fetch_array($res)){
+							
+									echo "<tr>";
+							
+									echo "<td align='center'>" .$i. "</td>";
+									echo "<td align='center'>
+											<select name=item_id value=''>Select Item Id
+											<option value=$a[item_id]>$a[item_name]</option>
+											</select>
+										</td>";
+							
+									echo "</tr>";
+							
+							$i++;
+						
+						}
+					?>
                 </table>
             </div>
         </div>

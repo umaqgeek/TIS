@@ -47,14 +47,6 @@ include('../inc/connect.php');
                         	<td><input name="warranty" type="text" size="40" value="<?php echo  $pro['warranty']; ?>" /></td>
                         </tr>
                         <tr>
-                        	<td>Start Project</td>
-                        	<td><input name="start_warranty" type="date" value="<?php echo  $pro['start_warranty']; ?>" /></td>
-                        </tr>
-                        <tr>
-                        	<td>End Project</td>
-                        	<td><input name="end_warranty" type="date" value="<?php echo  $pro['end_warranty']; ?>" /></td>
-                        </tr>
-                         <tr>
                         	<td></td>
                         	<td><input name="id" type="hidden" size="40" value="<?php echo  $pro['id']; ?>" /></td>
                         </tr>
@@ -65,9 +57,12 @@ include('../inc/connect.php');
                 </form>
                 <?php
 					if(isset($_POST['submit'])){
-						$sql = "UPDATE project SET project_name = '$_POST[project_name]', project_code = '$_POST[project_code]',
-								warranty = '$_POST[warranty]', start_warranty = '$_POST[start_warranty]',
-								end_warranty = '$_POST[end_warranty]' WHERE id = $_POST[id]";
+						$sql = "UPDATE project SET
+								project_name = '$_POST[project_name]',
+								project_code = '$_POST[project_code]',
+								warranty = '$_POST[warranty]' WHERE
+								id = $_POST[id]";
+								
 						$res = mysql_query($sql) or die (mysql_error());
 						echo "success";
 						header("Location:../admin/project.php");

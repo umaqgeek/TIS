@@ -27,14 +27,12 @@ include('../inc/connect.php');
         	<br /><br /><br />
         <div class="content">
         	<div>
-            	<table width="100%" border="0" rules="all" align="center">
+            	<table width="63%" height="27" border="0" align="center" rules="all">
                 	<tr>
-                    	<th>ID</th>
-                        <th>Project</th>
-                        <th>Project Code</th>
-                        <th>Warannty</th>
-                        <th>Start Project</th>
-                        <th>End Project</th>
+                    	<th width="10%">ID</th>
+                        <th width="39%">Project</th>
+                        <th width="39%">Project Code</th>
+                        <th width="12%">Warannty</th>
                     <tr>
                     <?php
 						$i=1;
@@ -45,8 +43,6 @@ include('../inc/connect.php');
 							echo "<td align='center'>" .$pro['project_name']. "</td>";
 							echo "<td align='center'>" .$pro['project_code']. "</td>";
 							echo "<td align='center'>" .$pro['warranty']. "</td>";
-							echo "<td align='center'>" .$pro['start_warranty']. "</td>";
-							echo "<td align='center'>" .$pro['end_warranty']. "</td>";
 							
 							echo "<td><a href='../func/projectmodify.php?modify=$pro[id]'>modify</a></td>";
 							echo "<td><a href='../func/projectdelete.php?delete=$pro[id]'>delete</a></td>";
@@ -75,14 +71,6 @@ include('../inc/connect.php');
                         <tr>
                         	<td>Warranty</td>
                         	<td><input name="warranty" type="text" /></td>
-                        </tr>
-                        <tr>
-                        	<td>Start Project</td>
-                        	<td><input name="start_warranty" type="date" /></td>
-                        </tr>
-                        <tr>
-                        	<td>End Project</td>
-                        	<td><input name="end_warranty" type="date" /></td>
                         </tr>
                         <tr>
                         	<td colspan="2" align="right"><span><input name="add" type="submit" value="add" /></span><span><input name="reset" type="reset" value="reset" /></span></td>
