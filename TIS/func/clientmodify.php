@@ -3,7 +3,7 @@ include('../inc/config.php');
 include('../inc/connect.php');
 	if(isset($_GET['modify'])){
 		$id= $_GET['modify'];
-		$sql = "SELECT * FROM clients WHERE id = $id";
+		$sql = "SELECT * FROM clients WHERE client_id = $id";
 		$res = mysql_query($sql) or die (mysql_error());
 		$client = mysql_fetch_array($res);
 	}
@@ -44,27 +44,15 @@ include('../inc/connect.php');
                         </tr>
                         <tr>
                         	<td>Address</td>
-                        	<td><input name="address" type="text" size="40" value="<?php echo  $client['address']; ?>" /></td>
+                        	<td><textarea name="address" cols="40"><?php echo  $client['address']; ?></textarea></td>
                         </tr>
-                        <tr>
-                        	<td>Postcode</td>
-                        	<td><input name="postcode" type="text" size="40" value="<?php echo  $client['postcode']; ?>" /></td>
-                        </tr>
-                        <tr>
-                        	<td>state</td>
-                        	<td><input name="state" type="text" size="40" value="<?php echo  $client['state']; ?>" /></td>
-                        </tr>
-                        <tr>
-                        	<td>Country</td>
-                        	<td><input name="country" type="text" size="40" value="<?php echo  $client['country']; ?>" /></td>
-                        </tr>
-                        <tr>
+                       	<tr>
                         	<td>Phone</td>
                         	<td><input name="phone" type="text" size="40" value="<?php echo  $client['phone']; ?>" /></td>
                         </tr>
-                         <tr>
+                        <tr>
                         	<td></td>
-                        	<td><input name="id" type="hidden" size="40" value="<?php echo  $client['id']; ?>" /></td>
+                        	<td><input name="client_id" type="hidden" size="40" value="<?php echo  $client['client_id']; ?>" /></td>
                         </tr>
                         <tr>
                         	<td colspan="2" align="center"><input name="submit" type="submit" value="submit" /></td>
@@ -73,9 +61,12 @@ include('../inc/connect.php');
                 </form>
                 <?php
 					if(isset($_POST['submit'])){
-						$sql = "UPDATE clients SET client_name = '$_POST[client_name]', company_name = '$_POST[company_name]',
-								address = '$_POST[address]', postcode = '$_POST[postcode]', state = '$_POST[state]',
-								country = '$_POST[country]', phone = '$_POST[phone]' WHERE id = $_POST[id]";
+						$sql = "UPDATE clients SET
+								client_name = '$_POST[client_name]',
+								company_name = '$_POST[company_name]',
+								address = '$_POST[address]',
+								phone = '$_POST[phone]' WHERE
+								client_id = $_POST[client_id]";
 						$res = mysql_query($sql) or die (mysql_error());
 						echo "success";
 						header("Location:../admin/client.php");

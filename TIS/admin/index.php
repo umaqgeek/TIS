@@ -6,17 +6,18 @@ include('../inc/config.php');
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title><?php echo $companyname; ?></title>
+<title><?php echo $companyname; ?>-Home</title>
 <link rel="stylesheet" href="../style/style.css" type="text/css" />
 </head>
 
 <body>
-	<div class="main">
+<div class="main">
     	<div class="navbar">
     		<ul id="menu">
         		<li><a href="#"><img src="../img/login logo.png" width="180" height="60" /></a></li>
                 <li><a href="manage.php">Manage System</a></li>
-        		<li><a href="invoiceForm.php">Invoice</a></li>
+        		<li><a href="invoice.php">Invoice</a></li>
+                <li><a href="#">Profile</a></li>
         		<li><a href="#">Logout</a></li>
 			</ul>
 		</div>
@@ -24,7 +25,7 @@ include('../inc/config.php');
         <div class="content">
         	<div align="center">
             	<img src="../img/login logo.png" /><br /><br />
-    			<h1>Welcome to <?php echo $companyname; ?> Invoice System</h1>
+    			<h1>Welcome to Invoice System</h1>
                 <img src="../img/invoice icon.png" />
             </div>
         </div>

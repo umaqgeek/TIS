@@ -18,9 +18,10 @@ include('../inc/connect.php');
 	<div class="main">
     	<div class="navbar">
     		<ul id="menu">
-        		<li><a href="index.php"><img src="../img/login logo.png" width="180" height="60" /></a></li>
+        		<li><a href="#"><img src="../img/login logo.png" width="180" height="60" /></a></li>
                 <li><a href="manage.php">Manage System</a></li>
         		<li><a href="invoiceForm.php">Invoice</a></li>
+                <li><a href="#">Profile</a></li>
         		<li><a href="#">Logout</a></li>
 			</ul>
 		</div>
@@ -38,9 +39,6 @@ include('../inc/connect.php');
                         <th>Name</th>
                         <th>IC</th>
                         <th>Address</th>
-                        <th>Postcode</th>
-                        <th>State</th>
-                        <th>Country</th>
                         <th>Phone</th>
                         <th>Level</th>
                    	<tr>
@@ -56,14 +54,11 @@ include('../inc/connect.php');
 							echo "<td align='center'>" .$user['name']. "</td>";
 							echo "<td align='center'>" .$user['ic']. "</td>";
 							echo "<td align='center'>" .$user['address']. "</td>";
-							echo "<td align='center'>" .$user['postcode']. "</td>";
-							echo "<td align='center'>" .$user['state']. "</td>";
-							echo "<td align='center'>" .$user['country']. "</td>";
 							echo "<td align='center'>" .$user['phone']. "</td>";
 							echo "<td align='center'>" .$user['level']. "</td>";
 							
-							echo "<td align='center'><a href='../func/usermodify.php?modify=$user[id]'>modify</a></td>";
-							echo "<td align='center'><a href='../func/userdelete.php?delete=$user[id]'>delete</a></td>";
+							echo "<td align='center'><a href='../func/usermodify.php?modify=$user[user_id]'>modify</a></td>";
+							echo "<td align='center'><a href='../func/userdelete.php?delete=$user[user_id]'>delete</a></td>";
 							
 							echo "</tr>";
 							
@@ -77,7 +72,7 @@ include('../inc/connect.php');
             	<hr />
             </div>
             <div>
-            	<form action="../func/addUser.php" method="post">
+            	<form action="../func/useradd.php" method="post">
                 	<table align="center">
                     	<th colspan="2">ADD USERS</th>
                     	<tr>
@@ -98,19 +93,7 @@ include('../inc/connect.php');
                         </tr>
                         <tr>
                         	<td>Address</td>
-                        	<td><input name="address" type="text" /></td>
-                        </tr>
-                        <tr>
-                        	<td>Postcode</td>
-                        	<td><input name="postcode" type="text" /></td>
-                        </tr>
-                        <tr>
-                        	<td>state</td>
-                        	<td><input name="state" type="text" /></td>
-                        </tr>
-                        <tr>
-                        	<td>Country</td>
-                        	<td><input name="country" type="text" /></td>
+                        	<td><textarea name="address"></textarea></td>
                         </tr>
                         <tr>
                         	<td>Phone</td>

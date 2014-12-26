@@ -3,7 +3,7 @@ include('../inc/config.php');
 include('../inc/connect.php');
 	if(isset($_GET['modify'])){
 		$id= $_GET['modify'];
-		$sql = "SELECT * FROM users WHERE id = $id";
+		$sql = "SELECT * FROM users WHERE user_id = $id";
 		$res = mysql_query($sql) or die (mysql_error());
 		$user = mysql_fetch_array($res);
 	}
@@ -52,19 +52,7 @@ include('../inc/connect.php');
                         </tr>
                         <tr>
                         	<td>Address</td>
-                        	<td><input name="address" type="text" size="40" value="<?php echo  $user['address']; ?>" /></td>
-                        </tr>
-                        <tr>
-                        	<td>Postcode</td>
-                        	<td><input name="postcode" type="text" size="40" value="<?php echo  $user['postcode']; ?>" /></td>
-                        </tr>
-                        <tr>
-                        	<td>state</td>
-                        	<td><input name="state" type="text" size="40" value="<?php echo  $user['state']; ?>" /></td>
-                        </tr>
-                        <tr>
-                        	<td>Country</td>
-                        	<td><input name="country" type="text" size="40" value="<?php echo  $user['country']; ?>" /></td>
+                        	<td><textarea name="address" cols="40"><?php echo  $user['address']; ?></textarea></td>
                         </tr>
                         <tr>
                         	<td>Phone</td>
@@ -76,7 +64,7 @@ include('../inc/connect.php');
                         </tr>
                         <tr>
                         	<td></td>
-                        	<td><input name="id" type="hidden" size="40" value="<?php echo  $user['id']; ?>" /></td>
+                        	<td><input name="user_id" type="hidden" size="40" value="<?php echo  $user['user_id']; ?>" /></td>
                         </tr>
                         <tr>
                         	<td colspan="2" align="center"><input name="submit" type="submit" value="submit" /></td>
@@ -85,9 +73,14 @@ include('../inc/connect.php');
                 </form>
                 <?php
 					if(isset($_POST['submit'])){
-						$sql = "UPDATE users SET username = '$_POST[username]', password = '$_POST[password]', name = '$_POST[name]',
-								ic = '$_POST[ic]', address = '$_POST[address]', postcode = '$_POST[postcode]', state = '$_POST[state]',
-								country = '$_POST[country]', phone = '$_POST[phone]', level = '$_POST[level]' WHERE id = $_POST[id]";
+						$sql = "UPDATE users SET username = '$_POST[username]',
+								password = '$_POST[password]',
+								name = '$_POST[name]',
+								ic = '$_POST[ic]',
+								address = '$_POST[address]',
+								phone = '$_POST[phone]',
+								level = '$_POST[level]'
+								WHERE user_id = $_POST[user_id]";
 						$res = mysql_query($sql) or die (mysql_error());
 						echo "success";
 						header("Location:../admin/staff.php");

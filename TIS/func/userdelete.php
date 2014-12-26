@@ -2,7 +2,7 @@
 	include("../inc/connect.php");
 	
 	$id = $_GET['delete'];
-	mysql_query("DELETE FROM users WHERE id = $id");
+	mysql_query("DELETE FROM users WHERE staff_id = $id");
 	echo "success delete data";
 	header("Location:../admin/staff.php");
 

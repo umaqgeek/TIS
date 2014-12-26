@@ -3,6 +3,7 @@ include('../inc/config.php');
 include('../inc/connect.php');
 	
 	$sql = "SELECT * FROM invoice";
+	
 	$res = mysql_query($sql) or die (mysql_error());
 ?>
 
@@ -10,7 +11,7 @@ include('../inc/connect.php');
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title><?php echo $companyname; ?> - Manage System</title>
+<title><?php echo $companyname; ?> - Invoice</title>
 <link rel="stylesheet" href="../style/style.css" type="text/css" />
 </head>
 
@@ -21,76 +22,29 @@ include('../inc/connect.php');
         		<li><a href="index.php"><img src="../img/login logo.png" width="180" height="60" /></a></li>
                 <li><a href="manage.php">Manage System</a></li>
         		<li><a href="invoiceForm.php">Invoice</a></li>
+                <li><a href="#">Profile</a></li>
         		<li><a href="#">Logout</a></li>
 			</ul>
 		</div>
         	<br /><br /><br />
         <div class="content">
         	<div>
-            	<table width="100%" rules="all" align="center">
+            	<h1 align="center">INVOICE</h1>
+                <br />
+                <table align="center" width="73%" border="1" bordercolor="#000000">
                 	<tr>
-                    	<th>ID</th>
-                        <th>Date</th>
-                        <th>Invoice#</th>
-                        <th>Customer ID</th>
-                        <th>Due Date</th>
-                        <th>Bill To</th>
-                        <th>Total</th>
+                    	<th width="3%">No</th>
+                        <th width="83%">Description</th>
+                        <th width="7%">Quantity</th>
+                        <th width="7%">Price</th>
                     <tr>
-                    <?php
-						$i=1;
-						while($inv = mysql_fetch_array($res)){
-							echo "<tr>";
+                    	
+                        <?php
+						
 							
-							echo "<td align='center'>" .$i. "</td>";
-							echo "<td align='center'>" .$inv['date']. "</td>";
-							echo "<td align='center'>" .$inv['invoice_code']. "</td>";
-							echo "<td align='center'>" .$inv['customer_ID']. "</td>";
-							echo "<td align='center'>" .$inv['due_date']. "</td>";
-							echo "<td align='center'>" .$inv['bill_to']. "</td>";
-							echo "<td align='center'>" .$inv['total']. "</td>";
-							
-							echo "<td align='center'><a href='../func/usermodify.php?modify=$inv[id]'>modify</a></td>";
-							echo "<td align='center'><a href='../func/userdelete.php?delete=$inv[id]'>delete</a></td>";
-							
-							echo "</tr>";
-							
-							$i++;
-						}
-					?>
-                    </tr>
+						
+						?>
                 </table>
-                <hr />
-            	<hr />
-            </div>
-            <div>
-            	<form action="" method="post">
-                	<table align="center">
-                    	<tr>
-                        	<td>Date</td>
-                        	<td><input name="date" type="date" /></td>
-                        </tr>
-                        <tr>
-                        	<td>Invoice #</td>
-                        	<td><input name="inv" type="text" /></td>
-                        </tr>
-                        <tr>
-                        	<td>Due Date</td>
-                        	<td><input name="ddate" type="date" /></td>
-                        </tr>
-                        <tr>
-                        	<td>Bill To</td>
-                        	<td><input name="bill" type="text" /></td>
-                        </tr>
-                        <tr>
-                        	<td>Total</td>
-                        	<td><input name="total" type="text" /></td>
-                        </tr>
-                        <tr>
-                        	<td colspan="2" align="right"><span><input name="add" type="button" value="add" /></span><span><input name="reset" type="button" value="reset" /></span></td>
-                        </tr>
-                    </table>                 
-                </form>
             </div>
         </div>
     </div>

@@ -18,7 +18,7 @@ include ('inc/config.php');
         <div align="center" id="login">
 			<center>
             	<fieldset style="width:50%">
-					<h1><?php echo $companyname; ?> Invoice System</h1>
+					<h1>Invoice System</h1>
 						<form method="post" action="admin/index.php">
 							Username<br />
 							<input type="text" name="username" /><br />

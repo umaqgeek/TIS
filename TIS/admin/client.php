@@ -18,9 +18,10 @@ include('../inc/connect.php');
 	<div class="main">
     	<div class="navbar">
     		<ul id="menu">
-        		<li><a href="index.php"><img src="../img/login logo.png" width="180" height="60" /></a></li>
+        		<li><a href="#"><img src="../img/login logo.png" width="180" height="60" /></a></li>
                 <li><a href="manage.php">Manage System</a></li>
-        		<li><a href="invoiceForm.php">Invoice</a></li>
+        		<li><a href="invoice.php">Invoice</a></li>
+                <li><a href="#">Profile</a></li>
         		<li><a href="#">Logout</a></li>
 			</ul>
 		</div>
@@ -33,9 +34,6 @@ include('../inc/connect.php');
                         <th>Client Name</th>
                         <th>Company Name</th>
                         <th>Address</th>
-                        <th>Postcode</th>
-                        <th>State</th>
-                        <th>Country</th>
                         <th>Phone</th>
                    	<tr>
                     
@@ -48,13 +46,10 @@ include('../inc/connect.php');
 							echo "<td align='center'>" .$client['client_name']. "</td>";
 							echo "<td align='center'>" .$client['company_name']. "</td>";
 							echo "<td align='center'>" .$client['address']. "</td>";
-							echo "<td align='center'>" .$client['postcode']. "</td>";
-							echo "<td align='center'>" .$client['state']. "</td>";
-							echo "<td align='center'>" .$client['country']. "</td>";
 							echo "<td align='center'>" .$client['phone']. "</td>";
 							
-							echo "<td><a href='../func/clientmodify.php?modify=$client[id]'>modify</a></td>";
-							echo "<td><a href='../func/clientdelete.php?delete=$client[id]'>delete</a></td>";
+							echo "<td><a href='../func/clientmodify.php?modify=$client[client_id]'>modify</a></td>";
+							echo "<td><a href='../func/clientdelete.php?delete=$client[client_id]'>delete</a></td>";
 							
 							echo "</tr>";
 							
@@ -68,7 +63,7 @@ include('../inc/connect.php');
             	<hr />
             </div>
             <div>
-            	<form action="../func/addClient.php" method="post">
+            	<form action="../func/clientadd.php" method="post">
                 	<table align="center">
                     	<tr>
                         	<td>Client Name</td>
@@ -80,19 +75,7 @@ include('../inc/connect.php');
                         </tr>
                         <tr>
                         	<td>Address</td>
-                        	<td><input name="address" type="text" /></td>
-                        </tr>
-                        <tr>
-                        	<td>Postcode</td>
-                        	<td><input name="postcode" type="text" /></td>
-                        </tr>
-                        <tr>
-                        	<td>state</td>
-                        	<td><input name="state" type="text" /></td>
-                        </tr>
-                        <tr>
-                        	<td>Country</td>
-                        	<td><input name="country" type="text" /></td>
+                        	<td><textarea name="address"></textarea></td>
                         </tr>
                         <tr>
                         	<td>Phone</td>
