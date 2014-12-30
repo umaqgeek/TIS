@@ -21,10 +21,10 @@ include ('inc/config.php');
 					<h1>Invoice System</h1>
 						<form method="post" action="admin/index.php">
 							Username<br />
-							<input type="text" name="username" /><br />
+								<input type="text" name="username" /><br />
 							Password<br />
-							<input type="password" name="password" /><br /><br />
-							<input id="button" type="submit" name="login" value="Login" />
+								<input type="password" name="password" /><br /><br />
+								<input id="button" type="submit" name="login" value="Login" />
     					</form>
     			</fieldset>
          	</center>

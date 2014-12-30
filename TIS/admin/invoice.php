@@ -21,32 +21,59 @@ include('../inc/connect.php');
     		<ul id="menu">
         		<li><a href="index.php"><img src="../img/login logo.png" width="180" height="60" /></a></li>
                 <li><a href="manage.php">Manage System</a></li>
-        		<li><a href="invoiceForm.php">Invoice</a></li>
+        		<li><a href="invoice.php">Invoice</a></li>
                 <li><a href="#">Profile</a></li>
         		<li><a href="#">Logout</a></li>
 			</ul>
 		</div>
         	<br /><br /><br />
         <div class="content">
-        	<div>
+        	<div align="center">
             	<h1 align="center">INVOICE</h1>
                 <br />
-                <table align="center" width="73%" border="1" bordercolor="#000000">
-                	<tr>
-                    	<th width="3%">No</th>
-                        <th width="83%">Description</th>
-                        <th width="7%">Quantity</th>
-                        <th width="7%">Price</th>
-                    <tr>
+                <form action="" method="post" style="width:70%">
+        			<table align="left">
+            			<tr>
+                			<td>FROM</td>
+                    		<td><textarea name=""></textarea></td>
+                		</tr>
+                		<tr>
+                			<td>TO</td>
+                    		<td><textarea name=""></textarea></td>
+                		</tr>
+            		</table>
+            		<table align="right">
+            			<tr>
+                			<td>Date</td>
+                    		<td><input name="" type="date" value="" /></td>
+                		</tr>
+                		<tr>
+                			<td>INVOICE #</td>
+                    		<td><input type="text" value="" size="10" /></td>
+                		</tr>
+                        <tr>
+                			<td>Customer ID</td>
+                    		<td><input type="text" value="" size="10" /></td>
+                		</tr>
+                        <tr>
+                			<td>Due Date</td>
+                    		<td><input name="" type="date" value="" /></td>
+                		</tr>
+            		</table>
+                    <br />
+					<table align="center" width="100%" border="1">
+                		<tr>
+                    		<th width="6%">No</th>
+                        	<th width="85%">Description</th>
+                        	<th width="6%">Quantity</th>
+                        	<th width="3%">Price</th>
+                    	<tr>
                     	
                         <?php
 						
 							
 						
 						?>
-                </table>
-            </div>
-        </div>
-    </div>
+                	</table>
 </body>
 </html>

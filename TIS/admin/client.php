@@ -18,7 +18,7 @@ include('../inc/connect.php');
 	<div class="main">
     	<div class="navbar">
     		<ul id="menu">
-        		<li><a href="#"><img src="../img/login logo.png" width="180" height="60" /></a></li>
+        		<li><a href="index.php"><img src="../img/login logo.png" width="180" height="60" /></a></li>
                 <li><a href="manage.php">Manage System</a></li>
         		<li><a href="invoice.php">Invoice</a></li>
                 <li><a href="#">Profile</a></li>
@@ -28,13 +28,14 @@ include('../inc/connect.php');
         	<br /><br /><br />
         <div class="content">
         	<div>
-            	<table width="100%" border="0" rules="all" align="center">
+            	<table width="100%" border="1" align="center">
                 	<tr>
                     	<th>ID</th>
                         <th>Client Name</th>
                         <th>Company Name</th>
                         <th>Address</th>
                         <th>Phone</th>
+                        <th colspan="2">Action</th>
                    	<tr>
                     
                     <?php
@@ -61,31 +62,6 @@ include('../inc/connect.php');
                 </table>
                 <hr />
             	<hr />
-            </div>
-            <div>
-            	<form action="../func/clientadd.php" method="post">
-                	<table align="center">
-                    	<tr>
-                        	<td>Client Name</td>
-                        	<td><input name="client_name" type="text" /></td>
-                        </tr>
-                        <tr>
-                        	<td>Company Name</td>
-                        	<td><input name="company_name" type="text" /></td>
-                        </tr>
-                        <tr>
-                        	<td>Address</td>
-                        	<td><textarea name="address"></textarea></td>
-                        </tr>
-                        <tr>
-                        	<td>Phone</td>
-                        	<td><input name="phone" type="text" /></td>
-                        </tr>
-                        <tr>
-                        	<td colspan="2" align="right"><span><input name="add" type="submit" value="add" /></span><span><input name="reset" type="reset" value="reset" /></span></td>
-                        </tr>
-                    </table>                 
-                </form>
             </div>
         </div>
     </div>

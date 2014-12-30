@@ -14,7 +14,7 @@ include('../inc/config.php');
 	<div class="main">
     	<div class="navbar">
     		<ul id="menu">
-        		<li><a href="#"><img src="../img/login logo.png" width="180" height="60" /></a></li>
+        		<li><a href="index.php"><img src="../img/login logo.png" width="180" height="60" /></a></li>
                 <li><a href="manage.php">Manage System</a></li>
         		<li><a href="invoice.php">Invoice</a></li>
                 <li><a href="#">Profile</a></li>
@@ -36,7 +36,7 @@ include('../inc/config.php');
                 	<tr>
                     	<td width="203" align="center"><a href="client.php"><img src="../img/download (4).jpg" width="158" height="158" /></a><br /><center>Client</center></td>
                         <td width="203" align="center"><a href="item.php"><img src="../img/download (3).jpg" width="158" height="158" /></a><br /><center>Item</center></td>
-                        <td width="223" align="center"><a href="invoice.php"><img src="../img/invoice icon.png" width="158" height="158" /></a><br /><center>Invoice</center></td>
+                        <td width="223" align="center"><a href="invlist.php"><img src="../img/invoice icon.png" width="158" height="158" /></a><br /><center>Invoice</center></td>
                     </tr>
                 </table>
             </div>

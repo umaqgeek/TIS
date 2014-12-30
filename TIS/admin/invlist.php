@@ -31,9 +31,13 @@ include('../inc/connect.php');
             <table align="center" border="1" width="100%">
             		<tr>
                 		<th width="2%">No</th>
-                        <th width="89%">Item</th>
-                        <th width="6%">Quantity</th>
-                        <th width="3%">Price</th>
+                        <th width="8%">Date</th>
+                        <th width="8%">Invoice Code</th>
+                        <th width="8%">Customer ID</th>
+                        <th width="8%">due_date</th>
+                        <th width="29%">Sender</th>
+                        <th width="29%">receive</th>
+                        <th width="8%">Total</th>
                 	<tr>
                 
                 	<?php
