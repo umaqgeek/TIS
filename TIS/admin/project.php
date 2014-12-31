@@ -28,12 +28,12 @@ include('../inc/connect.php');
         	<br /><br /><br />
         <div class="content">
         	<div>
-            	<table width="63%" height="27" border="0" align="center" rules="all">
+            	<table width="63%" border="1" align="center">
                 	<tr>
                     	<th width="10%">ID</th>
-                        <th width="39%">Project</th>
                         <th width="39%">Project Code</th>
-                        <th width="12%">Warannty</th>
+                        <th width="39%">Project Name</th>
+                        <th width="8%">Action</th>
                     <tr>
                     <?php
 						$i=1;
@@ -41,12 +41,9 @@ include('../inc/connect.php');
 							echo "<tr>";
 							
 							echo "<td align='center'>" .$i. "</td>";
-							echo "<td align='center'>" .$pro['project_name']. "</td>";
 							echo "<td align='center'>" .$pro['project_code']. "</td>";
-							echo "<td align='center'>" .$pro['warranty']. "</td>";
-							
-							echo "<td><a href='../func/projectmodify.php?modify=$pro[id]'>modify</a></td>";
-							echo "<td><a href='../func/projectdelete.php?delete=$pro[id]'>delete</a></td>";
+							echo "<td align='center'>" .$pro['project_name']. "</td>";
+							echo "<td align='center'><a href='../func/projectdelete.php?delete=$pro[project_id]'>delete</a></td>";
 							echo "</tr>";
 							
 							$i++;
@@ -59,19 +56,15 @@ include('../inc/connect.php');
             	<hr />
             </div>
             <div>
-            	<form action="../func/addProject.php" method="post">
+            	<form action="../func/projectadd.php" method="post">
                 	<table align="center">
                     	<tr>
-                        	<td>Project</td>
-                        	<td><input name="project_name" type="text" /></td>
-                        </tr>
-                        <tr>
                         	<td>Project Code</td>
                         	<td><input name="project_code" type="text" /></td>
                         </tr>
                         <tr>
-                        	<td>Warranty</td>
-                        	<td><input name="warranty" type="text" /></td>
+                        	<td>Project Name</td>
+                        	<td><input name="project_name" type="text" /></td>
                         </tr>
                         <tr>
                         	<td colspan="2" align="right"><span><input name="add" type="submit" value="add" /></span><span><input name="reset" type="reset" value="reset" /></span></td>

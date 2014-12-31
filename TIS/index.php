@@ -18,8 +18,8 @@ include ('inc/config.php');
         <div align="center" id="login">
 			<center>
             	<fieldset style="width:50%">
-					<h1>Invoice System</h1>
-						<form method="post" action="admin/index.php">
+					<h1>Login Here</h1>
+						<form method="post" action="login.php">
 							Username<br />
 								<input type="text" name="username" /><br />
 							Password<br />

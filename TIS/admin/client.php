@@ -31,6 +31,7 @@ include('../inc/connect.php');
             	<table width="100%" border="1" align="center">
                 	<tr>
                     	<th>ID</th>
+                        <th>Customer ID</th>
                         <th>Client Name</th>
                         <th>Company Name</th>
                         <th>Address</th>
@@ -44,13 +45,14 @@ include('../inc/connect.php');
 							echo "<tr>";
 							
 							echo "<td align='center'>" .$i. "</td>";
+							echo "<td align='center'>" .$client['customer_id']. "</td";
 							echo "<td align='center'>" .$client['client_name']. "</td>";
 							echo "<td align='center'>" .$client['company_name']. "</td>";
 							echo "<td align='center'>" .$client['address']. "</td>";
 							echo "<td align='center'>" .$client['phone']. "</td>";
 							
-							echo "<td><a href='../func/clientmodify.php?modify=$client[client_id]'>modify</a></td>";
-							echo "<td><a href='../func/clientdelete.php?delete=$client[client_id]'>delete</a></td>";
+							echo "<td><a href='../func/cliView.php?modify=$client[client_id]'>View</a></td>";
+							echo "<td><a href='../func/cliDelete.php?delete=$client[client_id]'>Delete</a></td>";
 							
 							echo "</tr>";
 							
