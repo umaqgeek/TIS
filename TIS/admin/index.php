@@ -31,10 +31,9 @@
     	<div class="navbar">
     		<ul id="menu">
         		<li><a href="index.php"><img src="../img/login logo.png" width="180" height="60" /></a></li>
-                <li><a href="manage.php">Manage System</a></li>
-        		<li><a href="invoice.php">Invoice</a></li>
+        		<li><a href="../adminfunc/client_insert.php">Invoice</a></li>
                 <li><a href="#">Profile</a></li>
-        		<li><a href="#">Logout</a></li>
+        		<li><a href="logout.php">Logout</a></li>
 			</ul>
 		</div>
         	<br /><br /><br />
@@ -45,7 +44,26 @@
         <div class="content">
         	<div align="center">
     			<h1>Welcome to <?php echo $companyname; ?> Invoice System</h1>
-                <img src="../img/invoice icon.png" />
+                <table width="524" align="center">
+                	<tr>
+                		<th><a href="users.php"><img src="../img/images.png" width="130" height="130" /></a><br />
+                        Users</th>
+                        <th><a href="client.php"><img src="../img/download (4).jpg" width="130" height="130" /></a><br />
+                        Client</th>
+                	</tr>
+               	</table>
+                <br />
+                <br />
+                <table width="694" align="center">
+                	<tr>
+                    	<th><a href="project.php"><img src="../img/download.jpg" width="130" height="130" /></a><br />
+                        Project</th>
+                        <th><a href="invoice.php"><img src="../img/invoice icon.png" width="130" height="130" /></a><br />
+                        Invoice</th>
+                        <th><a href="#"><img src="../img/download (3).jpg" width="130" height="130" /></a><br />
+                        Item</th>
+                    </tr>
+                </table>
             </div>
         </div>
     </div>

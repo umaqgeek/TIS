@@ -3,8 +3,9 @@
 
 		$project_code = $_POST['project_code'];
 		$project_name = $_POST['project_name'];
+		$warranty = $_POST['warranty'];
 
-		mysql_query("INSERT INTO project (project_code, project_name) VALUES('$project_code', '$project_name')") or die ("Error inserting data into table");
+		mysql_query("INSERT INTO project (project_code, project_name, warranty) VALUES('$project_code', '$project_name', $warranty)") or die ("Error inserting data into table");
 	
 		echo "success";
 		header("Location:../admin/project.php");

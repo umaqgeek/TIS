@@ -1,9 +1,25 @@
 <?php
+ session_start();
+ if(empty($_SESSION['name']))
+   {    
+	header('location:~/../../index.php');
+   }
+?>
+<?php
 include('../inc/config.php');
 include('../inc/connect.php');
+
+	$name = $_SESSION['name'];
+	$sql = "SELECT * FROM users WHERE name = '$name'";
+	$res = mysql_query($sql) or die('Query failed. ' . mysql_error());
+	$row = mysql_fetch_array($res, MYSQL_ASSOC);
 	
-	$sql = "SELECT * FROM project";
-	$res = mysql_query($sql) or die (mysql_error());
+	$name = $row['name'];
+	$ic = $row['ic'];
+	
+	$sql1 = "SELECT * FROM project";
+	$res1 = mysql_query($sql1) or die (mysql_error());
+	
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -19,31 +35,41 @@ include('../inc/connect.php');
     	<div class="navbar">
     		<ul id="menu">
         		<li><a href="index.php"><img src="../img/login logo.png" width="180" height="60" /></a></li>
-                <li><a href="manage.php">Manage System</a></li>
         		<li><a href="invoice.php">Invoice</a></li>
                 <li><a href="#">Profile</a></li>
-        		<li><a href="#">Logout</a></li>
+        		<li><a href="logout.php">Logout</a></li>
 			</ul>
 		</div>
         	<br /><br /><br />
+            <hr />
+            	<center><b><h4><?php echo $name?> | <?php echo $ic ?></h4></b></center>
+            <hr />
         <div class="content">
         	<div>
-            	<table width="63%" border="1" align="center">
+            	<table border="1" align="center">
                 	<tr>
-                    	<th width="10%">ID</th>
-                        <th width="39%">Project Code</th>
-                        <th width="39%">Project Name</th>
-                        <th width="8%">Action</th>
-                    <tr>
+                    	<th colspan="13">PROJECT</th>
+                    </tr>
+                	<tr>
+                    	<th>No</th>
+                        <th>Project ID</th>
+                        <th>Project Code</th>
+                        <th>Project Name</th>
+                        <th>Action</th>
+                   	<tr>
+                    
                     <?php
 						$i=1;
-						while($pro = mysql_fetch_array($res)){
+						while($project = mysql_fetch_array($res1)){
 							echo "<tr>";
 							
 							echo "<td align='center'>" .$i. "</td>";
-							echo "<td align='center'>" .$pro['project_code']. "</td>";
-							echo "<td align='center'>" .$pro['project_name']. "</td>";
-							echo "<td align='center'><a href='../func/projectdelete.php?delete=$pro[project_id]'>delete</a></td>";
+							echo "<td align='center'>" .$project['project_id']. "</td>";
+							echo "<td align='center'>" .$project['project_code']. "</td>";
+							echo "<td align='center'>" .$project['project_name']. "</td>";
+							
+							echo "<td align='center'><a href='../adminfunc/projectview.php?view=$project[project_id]'>View</a></td>";
+							
 							echo "</tr>";
 							
 							$i++;
@@ -53,24 +79,6 @@ include('../inc/connect.php');
                     </tr>
                 </table>
                 <hr />
-            	<hr />
-            </div>
-            <div>
-            	<form action="../func/projectadd.php" method="post">
-                	<table align="center">
-                    	<tr>
-                        	<td>Project Code</td>
-                        	<td><input name="project_code" type="text" /></td>
-                        </tr>
-                        <tr>
-                        	<td>Project Name</td>
-                        	<td><input name="project_name" type="text" /></td>
-                        </tr>
-                        <tr>
-                        	<td colspan="2" align="right"><span><input name="add" type="submit" value="add" /></span><span><input name="reset" type="reset" value="reset" /></span></td>
-                        </tr>
-                    </table>                 
-                </form>
             </div>
         </div>
     </div>
