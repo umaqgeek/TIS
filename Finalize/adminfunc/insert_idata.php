@@ -1,4 +1,5 @@
 <?php
+
  session_start();
  if(empty($_SESSION['name']))
    {    
@@ -32,7 +33,7 @@ include('../inc/connect.php');
 	<div class="main">
     	<div class="navbar">
     		<ul id="menu">
-        		<li><a href="index.php"><img src="../img/login logo.png" width="180" height="60" /></a></li>
+        		<li><a href="../admin/index.php"><img src="../img/login logo.png" width="180" height="60" /></a></li>
         		<li><a href="../admin/invoice_create.php">Invoice</a></li>
                 <li><a href="../admin/profile.php">Profile</a></li>
         		<li><a href="../logout.php">Logout</a></li>
@@ -50,13 +51,13 @@ include('../inc/connect.php');
                     	<tr>
                         	<th width="103">Client ID</th>
                         	<td width="144">
-                            	<select name="client">
-                                	<option id="0">select ID</option>
+                            	<select name="client_id">
+                                	<option value="0">select ID</option>
                                     	<?php
 											$getCilentId = mysql_query("SELECT * FROM clients");
 											while($viewAllId = mysql_fetch_array($getCilentId)){
 										?>
-                                   	<option id="<?php echo $viewAllId['client_id'] ?>"><?php echo $viewAllId['client_id'] ?></option>
+                                   	<option value="<?php echo $viewAllId['client_id'] ?>"><?php echo $viewAllId['client_id'] ?></option>
                                     	<?php } ?>
                                 </select>
                             </td>
@@ -64,13 +65,13 @@ include('../inc/connect.php');
                     	<tr>
                         	<th>Project Code</th>
                         	<td>
-                            	<select name="project">
-                                	<option id="0">select ID</option>
+                            	<select name="project_id">
+                                	<option value="0">select ID</option>
                                     	<?php
 											$getProjectId = mysql_query("SELECT * FROM project");
 											while($viewAllId = mysql_fetch_array($getProjectId)){
 										?>
-                                   	<option id="<?php echo $viewAllId['project_id'] ?>"><?php echo $viewAllId['project_code'] ?></option>
+                                   	<option value="<?php echo $viewAllId['project_id'] ?>"><?php echo $viewAllId['project_code'] ?></option>
                                     	<?php } ?>
                                 </select>
                            	</td>
@@ -84,7 +85,8 @@ include('../inc/connect.php');
                         	<td><input name="due_date" type="date" /></td>
                         </tr>
                         <tr>
-                        	<td colspan="2" align="center"><input name="next" type="submit" value="Next" /></td>
+                        	<td colspan="2" align="center"><input name="next" type="submit" value="Next" />
+                            								<input type="hidden" name="invoice_id" /></td>
                         </tr>
                     </table>                 
                 </form>

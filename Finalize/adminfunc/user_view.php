@@ -17,6 +17,10 @@ include('../inc/connect.php');
 	$name = $row['name'];
 	$ic = $row['ic'];
 	
+	$id= $_GET['view'];
+	$sql1 = "SELECT * FROM users WHERE user_id = $id";
+	$res1 = mysql_query($sql1) or die (mysql_error());
+	$user = mysql_fetch_array($res1);
 ?>
 
 
@@ -33,9 +37,8 @@ include('../inc/connect.php');
     	<div class="navbar">
     		<ul id="menu">
         		<li><a href="../admin/index.php"><img src="../img/login logo.png" width="180" height="60" /></a></li>
-        		<li><a href="../admin/invoice_create.php">Invoice</a></li>
-                <li><a href="../admin/profile.php">Profile</a></li>
-        		<li><a href="../logout.php">Logout</a></li>
+        		<li><a href="#">Invoice</a></li>
+        		<li><a href="#">Logout</a></li>
 			</ul>
 		</div>
         	<br /><br /><br />
@@ -44,28 +47,43 @@ include('../inc/connect.php');
             <hr />
         <div class="content">
             <div>
-            	<form action="add_c.php" method="post">
-                	<table width="310" border="2" align="center">
-                    	    <th colspan="3">Fill Client Informations</th>
-                    	<tr>
-                        	<th width="131">Client Name</th>
-                        	<td width="161"><input name="client_name" type="text" /></td>
+            	<form action="../admin/users.php" method="post">
+                	<table width="300" border="2" align="center">
+                    	  <th colspan="3">USER</th>
+                        <tr>
+                        	<th width="100">User ID</th>
+                        	<th width="182"><?php echo  $user['user_id']; ?></th>
                         </tr>
                     	<tr>
-                        	<th>Company Name</th>
-                        	<td><input name="company_name" type="text" /></td>
+                        	<th>Username</th>
+                        	<th><?php echo  $user['username']; ?></th>
+                        </tr>
+                    	<tr>
+                        	<th>Password</th>
+                        	<th><?php echo  $user['password']; ?></th>
+                        </tr>
+                    	<tr>
+                        	<th>Name</th>
+                        	<th><?php echo  $user['name']; ?></th>
+                        </tr>
+                        <tr>
+                        	<th>IC</th>
+                        	<th><?php echo  $user['ic']; ?></th>
                         </tr>
                         <tr>
                         	<th>Address</th>
-                        	<td><textarea name="address"></textarea></td>
+                        	<th><?php echo  $user['address']; ?></th>
                         </tr>
                         <tr>
                         	<th>Phone</th>
-                        	<td><input name="phone" type="text" /></td>
+                        	<th><?php echo  $user['phone']; ?></th>
                         </tr>
                         <tr>
-                        	<td colspan="2" align="center"><input name="next" type="submit" value="Next" />
-                            								<input type="hidden" name="client_id" /></td>
+                        	<th>Level</th>
+                        	<th><?php echo  $user['level']; ?></th>
+                        </tr>
+                        <tr>
+                        	<td colspan="2" align="center"><input name="back" type="submit" value="Back" /></td>
                         </tr>
                     </table>                 
                 </form>

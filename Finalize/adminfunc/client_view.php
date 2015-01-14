@@ -17,6 +17,10 @@ include('../inc/connect.php');
 	$name = $row['name'];
 	$ic = $row['ic'];
 	
+	$id= $_GET['view'];
+	$sql1 = "SELECT * FROM clients WHERE client_id = $id";
+	$res1 = mysql_query($sql1) or die (mysql_error());
+	$cli = mysql_fetch_array($res1);
 ?>
 
 
@@ -34,7 +38,6 @@ include('../inc/connect.php');
     		<ul id="menu">
         		<li><a href="../admin/index.php"><img src="../img/login logo.png" width="180" height="60" /></a></li>
         		<li><a href="../admin/invoice_create.php">Invoice</a></li>
-                <li><a href="../admin/profile.php">Profile</a></li>
         		<li><a href="../logout.php">Logout</a></li>
 			</ul>
 		</div>
@@ -44,24 +47,31 @@ include('../inc/connect.php');
             <hr />
         <div class="content">
             <div>
-            	<form action="add_p.php" method="post">
-                	<table width="333" border="2" align="center">
-                    	    <th colspan="3">Fill Project Detail</th>
-                    	<tr>
-                        	<th width="171">Project Code</th>
-                        	<td width="144"><input name="project_code" type="text" /></td>
+            	<form action="../admin/client.php" method="post">
+                	<table width="300" border="2" align="center">
+                    	    <th colspan="3">CLIENT</th>
+                        <tr>
+                        	<th width="100">Client ID</th>
+                        	<th width="182"><?php echo  $cli['client_id']; ?></th>
                         </tr>
                     	<tr>
-                        	<th>Project Name</th>
-                        	<td><input name="project_name" type="text" /></td>
+                        	<th>Client Name</th>
+                        	<th><?php echo  $cli['client_name']; ?></th>
+                        </tr>
+                    	<tr>
+                        	<th>Company Name</th>
+                        	<th><?php echo  $cli['company_name']; ?></th>
                         </tr>
                         <tr>
-                        	<th>Warranty Month</th>
-                        	<td><input name="warranty_month" type="text" /></td>
+                        	<th>Address</th>
+                        	<th><?php echo  $cli['address']; ?></th>
                         </tr>
                         <tr>
-                        	<td colspan="2" align="center"><input name="next" type="submit" value="Next" />
-                            								<input type="hidden" name="project_id" /></td>
+                        	<th>Phone</th>
+                        	<th><?php echo  $cli['phone']; ?></th>
+                        </tr>
+                        <tr>
+                        	<td colspan="2" align="center"><input name="back" type="submit" value="Back" /></td>
                         </tr>
                     </table>                 
                 </form>

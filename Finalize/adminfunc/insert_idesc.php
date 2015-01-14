@@ -1,4 +1,9 @@
 <?php
+$invoice_id = 0;
+if (isset($_GET['id'])) {
+	$invoice_id = $_GET['id'];
+}
+
  session_start();
  if(empty($_SESSION['name']))
    {    
@@ -32,7 +37,7 @@ include('../inc/connect.php');
 	<div class="main">
     	<div class="navbar">
     		<ul id="menu">
-        		<li><a href="index.php"><img src="../img/login logo.png" width="180" height="60" /></a></li>
+        		<li><a href="../admin/index.php"><img src="../img/login logo.png" width="180" height="60" /></a></li>
         		<li><a href="../admin/invoice_create.php">Invoice</a></li>
                 <li><a href="../admin/profile.php">Profile</a></li>
         		<li><a href="../logout.php">Logout</a></li>
@@ -44,16 +49,47 @@ include('../inc/connect.php');
             <hr />
         <div class="content">
             <div>
-            	<form action="" method="post">
+            	<form action="add_idesc.php" method="post">
+                <input type="hidden" value="<?php echo $invoice_id; ?>" name="invoice_id" />
                 	<table width="300" border="2" align="center">
-                    	        <th colspan="5">Fill Item Description</th>
+                    	  <th colspan="5">Fill Item Description</th>
                     	<tr>
-                        	<th width="20">No</th>
                         	<th width="158">Description</th>
                         	<th width="58">Quantity</th>
                         	<th width="34">Price</th>
+                            
                         <tr>
-                        	<td colspan="5" align="center"><input name="next" type="submit" value="Submit" /></td>
+                        	<td><input name="item_name" type="text" size="100" /></td>
+                            <td><input name="quantity" type="text" size="6" maxlength="6" /></td>
+                            <td><input name="price" type="text" size="6" maxlength="6" /></td>
+                            
+                        <tr>
+                        	<td><input name="item_name" type="text" size="100" /></td>
+                            <td><input name="quantity" type="text" size="6" maxlength="6" /></td>
+                            <td><input name="price" type="text" size="6" maxlength="6" /></td>
+                        
+                        <tr>
+                        	<td><input name="item_name" type="text" size="100" /></td>
+                            <td><input name="quantity" type="text" size="6" maxlength="6" /></td>
+                            <td><input name="price" type="text" size="6" maxlength="6" /></td>
+                        
+                        <tr>
+                        	<td><input name="item_name" type="text" size="100" /></td>
+                            <td><input name="quantity" type="text" size="6" maxlength="6" /></td>
+                            <td><input name="price" type="text" size="6" maxlength="6" /></td>
+                        
+                        <tr>
+                        	<td><input name="item_name" type="text" size="100" /></td>
+                            <td><input name="quantity" type="text" size="6" maxlength="6" /></td>
+                            <td><input name="price" type="text" size="6" maxlength="6" /></td>
+                        
+                        <tr>
+                        	<td><input name="item_name" type="text" size="100" /></td>
+                            <td><input name="quantity" type="text" size="6" maxlength="6" /></td>
+                            <td><input name="price" type="text" size="6" maxlength="6" /></td>                        
+                        <tr>
+                        	<td colspan="5" align="center"><input name="next" type="submit" value="Submit" />
+                            								<input type="hidden" name="item_id" /></td>
                         </tr>
                     </table>                 
                 </form>
