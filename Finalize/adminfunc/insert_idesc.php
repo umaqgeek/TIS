@@ -59,34 +59,15 @@ include('../inc/connect.php');
                         	<th width="34">Price</th>
                             
                         <tr>
-                        	<td><input name="item_name" type="text" size="100" /></td>
-                            <td><input name="quantity" type="text" size="6" maxlength="6" /></td>
-                            <td><input name="price" type="text" size="6" maxlength="6" /></td>
+                        	<td><input name="item_name[]" type="text" size="100" /></td>
+                            <td><input name="item_name[]" type="text" size="6" maxlength="6" /></td>
+                            <td><input name="item_name[]" type="text" size="6" maxlength="6" /></td>
                             
-                        <tr>
-                        	<td><input name="item_name" type="text" size="100" /></td>
-                            <td><input name="quantity" type="text" size="6" maxlength="6" /></td>
-                            <td><input name="price" type="text" size="6" maxlength="6" /></td>
-                        
-                        <tr>
-                        	<td><input name="item_name" type="text" size="100" /></td>
-                            <td><input name="quantity" type="text" size="6" maxlength="6" /></td>
-                            <td><input name="price" type="text" size="6" maxlength="6" /></td>
-                        
-                        <tr>
-                        	<td><input name="item_name" type="text" size="100" /></td>
-                            <td><input name="quantity" type="text" size="6" maxlength="6" /></td>
-                            <td><input name="price" type="text" size="6" maxlength="6" /></td>
-                        
-                        <tr>
-                        	<td><input name="item_name" type="text" size="100" /></td>
-                            <td><input name="quantity" type="text" size="6" maxlength="6" /></td>
-                            <td><input name="price" type="text" size="6" maxlength="6" /></td>
-                        
-                        <tr>
-                        	<td><input name="item_name" type="text" size="100" /></td>
-                            <td><input name="quantity" type="text" size="6" maxlength="6" /></td>
-                            <td><input name="price" type="text" size="6" maxlength="6" /></td>                        
+                         <tr>
+                        	<td><input name="item_name[]" type="text" size="100" /></td>
+                            <td><input name="item_name[]" type="text" size="6" maxlength="6" /></td>
+                            <td><input name="item_name[]" type="text" size="6" maxlength="6" /></td>
+                                                
                         <tr>
                         	<td colspan="5" align="center"><input name="next" type="submit" value="Submit" />
                             								<input type="hidden" name="item_id" /></td>

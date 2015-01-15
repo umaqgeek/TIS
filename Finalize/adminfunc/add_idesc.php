@@ -2,15 +2,13 @@
 	include("../inc/connect.php");
 		
 		//print_r($_POST); die();
-		$invoice_id = $_POST['invoice_id'];
 		$item_name = $_POST['item_name'];
-		$quantity = $_POST['quantity'];
-		$price = $_POST['price'];
+		$invoice_id = $_POST['invoice_id'];
 
-		for($x = 0; $x++;){
+		for($x = 0; $x <sizeof('$item_name'); $x++){
 			
-			mysql_query("INSERT INTO item (invoice_id, item_name, quantity, price) 
-			VALUES('$invoice_id', '$item_name', '$quantity', '$price')") 
+			$sql = mysql_query("INSERT INTO item (invoice_id, item_name) 
+			VALUES('$invoice_id', '$item_name[$x]')") 
 			or die ("Error inserting data into table");
 	
 			$id = mysql_insert_id();
