@@ -2,18 +2,24 @@
 	include("../inc/connect.php");
 		
 		//print_r($_POST); die();
-		$item_name = $_POST['item_name'];
 		$invoice_id = $_POST['invoice_id'];
-
-		for($x = 0; $x <sizeof('$item_name'); $x++){
-			
-			$sql = mysql_query("INSERT INTO item (invoice_id, item_name) 
-			VALUES('$invoice_id', '$item_name[$x]')") 
-			or die ("Error inserting data into table");
-	
-			$id = mysql_insert_id();
+		$item_name = $_POST['item_name'];
+		$quantity = $_POST['quantity'];
+		$price = $_POST['price'];
 		
-			$x++;
+		$item = sizeof($item_name);
+
+		for($x = 0; $x < $item; $x++) {
+			
+			if ($item_name[$x] != '') {
+			
+				$sql = mysql_query("INSERT INTO item (invoice_id, item_name, quantity, price) 
+				VALUES('".$invoice_id."', '".$item_name[$x]."', '".$quantity[$x]."', '".$price[$x]."')") 
+				or die ("Error inserting data into table");
+		
+				$id = mysql_insert_id();
+			
+			}
 		}
 		echo "success";
 		mysql_close($conn);

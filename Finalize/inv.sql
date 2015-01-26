@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jan 02, 2015 at 01:10 PM
+-- Generation Time: Jan 26, 2015 at 09:36 AM
 -- Server version: 5.6.12-log
 -- PHP Version: 5.4.12
 
@@ -35,7 +35,7 @@ CREATE TABLE IF NOT EXISTS `clients` (
   `address` varchar(200) NOT NULL,
   `phone` varchar(200) NOT NULL,
   PRIMARY KEY (`client_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10 ;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -49,11 +49,8 @@ CREATE TABLE IF NOT EXISTS `invoice` (
   `project_id` int(200) NOT NULL,
   `date` date NOT NULL,
   `due_date` date NOT NULL,
-  `total` varchar(200) NOT NULL,
-  PRIMARY KEY (`invoice_id`),
-  KEY `client_id` (`client_id`),
-  KEY `project_id` (`project_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+  PRIMARY KEY (`invoice_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -67,10 +64,8 @@ CREATE TABLE IF NOT EXISTS `item` (
   `item_name` varchar(200) NOT NULL,
   `quantity` varchar(200) NOT NULL,
   `price` varchar(200) NOT NULL,
-  PRIMARY KEY (`item_id`),
-  UNIQUE KEY `item_id` (`item_id`),
-  KEY `invoice_id` (`invoice_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+  PRIMARY KEY (`item_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=17 ;
 
 -- --------------------------------------------------------
 
@@ -82,9 +77,9 @@ CREATE TABLE IF NOT EXISTS `project` (
   `project_id` int(200) NOT NULL AUTO_INCREMENT,
   `project_code` varchar(200) NOT NULL,
   `project_name` varchar(200) NOT NULL,
-  `warranty` varchar(200) NOT NULL,
+  `warranty_month` varchar(200) NOT NULL,
   PRIMARY KEY (`project_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -102,33 +97,16 @@ CREATE TABLE IF NOT EXISTS `users` (
   `phone` varchar(200) NOT NULL,
   `level` varchar(200) NOT NULL,
   PRIMARY KEY (`user_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=16 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=14 ;
 
 --
 -- Dumping data for table `users`
 --
 
 INSERT INTO `users` (`user_id`, `username`, `password`, `name`, `ic`, `address`, `phone`, `level`) VALUES
-(1, 'tuffah', 'admin', 'Tuffah Informatics', '-', '-', '+6019-9737579', 'admin'),
-(9, 'kamarul94', 'marul94', 'Kamarul Bin Rizam', '941020-01-5897', 'MLO 2800 Kampung Melayu Sedenak 81010 Kulaijaya Johor', '+6017-7499736', 'staff'),
-(13, 'ezwan94', 'wan123', 'Mohamad Ezwan Bin Mohd Shahrin', '941227-01-5915', 'NO 28 Kg Seri Maju Jaya machap', '+6014-6241602', 'staff');
-
---
--- Constraints for dumped tables
---
-
---
--- Constraints for table `invoice`
---
-ALTER TABLE `invoice`
-  ADD CONSTRAINT `invoice_ibfk_2` FOREIGN KEY (`project_id`) REFERENCES `project` (`project_id`),
-  ADD CONSTRAINT `invoice_ibfk_1` FOREIGN KEY (`client_id`) REFERENCES `clients` (`client_id`);
-
---
--- Constraints for table `item`
---
-ALTER TABLE `item`
-  ADD CONSTRAINT `item_ibfk_1` FOREIGN KEY (`invoice_id`) REFERENCES `invoice` (`invoice_id`);
+(1, 'tuffah', 'admin', 'Tuffah Informatics', 'xxxxxx-xx-xxxx', 'No 13 Jalan Bukit Beruang Utama Tanam Bukit Puteri 75450 Ayer Keroh Melaka', '019-9737579', 'admin'),
+(9, 'kamarul94', 'marul94', 'Kamalrul Bin Rizam', '941020-01-5897', 'MLO 2800 Kampung Melayu Sedenak 81010 Kulaijaya Johor', '017-7499736', 'staff'),
+(13, 'ezwan94', 'wan123', 'Mohamad Ezwan Bin Mohd Shahrin', '941227-01-5915', 'NO 28 Kg Seri Maju Jaya machap', '014-6241602', 'staff');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

@@ -45,11 +45,11 @@ include('../inc/connect.php');
         <div class="content">
             <div>
             	<form action="add_c.php" method="post">
-                	<table width="310" border="2" align="center">
+                	<table width="22.6%" border="2" align="center">
                     	    <th colspan="3">Fill Client Informations</th>
                     	<tr>
-                        	<th width="131">Client Name</th>
-                        	<td width="161"><input name="client_name" type="text" /></td>
+                        	<th>Client Name</th>
+                        	<td><input name="client_name" type="text" /></td>
                         </tr>
                     	<tr>
                         	<th>Company Name</th>

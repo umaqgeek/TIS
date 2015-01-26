@@ -44,6 +44,7 @@ include('../inc/connect.php');
             <hr />
             	<center><b><h4><?php echo $name?> | <?php echo $ic ?></h4></b></center>
             <hr />
+            
         <div class="content">
         	<div>
             	<table border="1" align="center">

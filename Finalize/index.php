@@ -10,14 +10,14 @@ include ('inc/config.php');
 </head>
 
 <body>
-	<div class="wrapper">
+	<div>
     	<div align="center"><img src="img/login logo.png" /><br /><br />
     		<h1>Welcome to <?php echo $companyname; ?> Invoice System</h1>
         </div>
         	<br />
-        <div align="center" id="login">
+        <div align="center">
 			<center>
-            	<fieldset style="width:50%">
+            	<fieldset style="width:20%">
 					<h1>Login Here</h1>
 						<form method="post" action="login.php">
 							Username<br />
