@@ -42,35 +42,35 @@
             	<form action="pf_edit.php" method="post">
             		<table align="center" width="40%" border="1">
                 		<tr>
+                        	<input name="user_id" type="hidden" size="40" value="<?php echo  $user['user_id']; ?>" />
                     		<th width="30%">Name</th>
-                        	<th width="70%"><?php echo  $user['name']; ?></th>
+                        	<th width="70%"><input type="text" name="name" value="<?php echo  $user['name']; ?>" /></th>
                     	</tr>
                     	<tr>
                     		<th>IC No</th>
-                        	<th><?php echo  $user['ic']; ?></th>
+                        	<th><input type="text" name="ic" value="<?php echo  $user['ic']; ?>" /></th>
                     	</tr>
                     	<tr>
                     		<th>Date Of Birth</th>
-                        	<th><?php echo  $user['dob']; ?></th>
+                        	<th><input type="date" name="dob" value="<?php echo  $user['dob']; ?>" /></th>
                     	</tr>
                     	<tr>
                     		<th>No Phone</th>
-                        	<th><?php echo  $user['phone']; ?></th>
+                        	<th><input type="text" name="phone" value="<?php echo  $user['phone']; ?>" /></th>
                     	</tr>
                    	 	<tr>
                     		<th>Email</th>
-                        	<th><?php echo  $user['email']; ?></th>
+                        	<th><input type="text" name="email" value="<?php echo  $user['email']; ?>" /></th>
                     	</tr>
                     	<tr>
                     		<th>Address</th>
-                        	<th><?php echo  $user['address']; ?></th>
+                        	<th><textarea name="address"><?php echo  $user['address']; ?></textarea></th>
                     	</tr>
                 	</table><br />
-                <input type="submit" name="edit" value="Edit" />
+                <input type="submit" name="save" value="Save" />
       		</form>
             </center>
       	</div>
-        <br />
         <div>
         	<footer align="center">
             	<p><b>All Rights Reserved</b> &copy; Tuffah Informatics</p>
@@ -79,3 +79,18 @@
         </div>
 </body>
 </html>
+<?php
+	if(isset($_POST['save'])){
+		$sql = "UPDATE user SET
+				name = '$_POST[name]',
+				ic = '$_POST[ic]',
+				dob = '$_POST[dob]',
+				phone = '$_POST[phone]',
+				email = '$_POST[email]',
+				address = '$_POST[address]'
+				WHERE user_id = $_POST[user_id]";
+			$res = mysql_query($sql) or die (mysql_error());
+			echo "success";
+			header("Location:profile.php");
+		}
+?>

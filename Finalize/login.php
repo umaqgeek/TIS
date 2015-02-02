@@ -6,7 +6,7 @@
 		$password = trim(addslashes($_POST['password']));
 		
 		if ($username != '' && $password != '') {
-			$sql = "SELECT * FROM users
+			$sql = "SELECT * FROM user
 					WHERE username = '$username'
 					AND password = '$password'";
 			

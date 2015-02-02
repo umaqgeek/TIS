@@ -34,41 +34,50 @@
 		</div>
         <br /><br />
         <div>
-        	<table border="1" align="center">
+    		<table border="1" align="center">
             	<tr>
-                	<th colspan="13">Clients</th>
+                	<th colspan="13">USERS</th>
                 </tr>
                 <tr>
-                	<th>ID</th>
-                	<th>Client Code</th>
-                    <th>Client Name</th>
-                    <th>Company Name</th>
+                	<th>NO</th>
+                    <th>Username</th>
+                    <th>Password</th>
+                    <th>Position</th>
+                    <th>Level</th>
                     <th colspan="2">Action</th>
                		
                     <tr>
                 	<?php
-						$sql1 = "SELECT * FROM client";
+						$sql1 = "SELECT * FROM user";
 						$res1 = mysql_query($sql1) or die('Query failed. ' . mysql_error());
 						$row = mysql_fetch_array($res, MYSQL_ASSOC);
 							$i=1;
-								while($cli = mysql_fetch_array($res1)){
+								while($user = mysql_fetch_array($res1)){
 									echo "<tr>";
-									
-									echo "<td align='center'>" .$i. "</td>";							
-									echo "<td align='center'>" .$cli['client_code']. "</td>";
-									echo "<td align='center'>" .$cli['client_name']. "</td>";
-									echo "<td align='center'>" .$cli['client_comp']. "</td>";
 							
-									echo "<td align='center'><a href='client_view.php?view=$cli[client_id]'>View</a></td>";
-									echo "<td align='center'><a href='client_delete.php?delete=$cli[client_id]'>Delete</a></td>";
+									echo "<td align='center'>" .$i. "</td>";
+									echo "<td align='center'>" .$user['username']. "</td>";
+									echo "<td align='center'>" .$user['password']. "</td>";
+									echo "<td align='center'>" .$user['position']. "</td>";
+									echo "<td align='center'>" .$user['level']. "</td>";
+							
+									echo "<td align='center'><a href='user_view.php?view=$user[user_id]'>View</a></td>";
+									echo "<td align='center'><a href='user_delete.php?delete=$user[user_id]'>Delete</a></td>";
 							
 									echo "</tr>";
-								
-								$i++;
+							
+									$i++;
 								}
-				?>
-            </tr>
+					?>
+            	</tr>
         </table>
-	</div>
+        </div>
+        <br />
+        <div>
+        	<footer align="center">
+            	<p><b>All Rights Reserved</b> &copy; Tuffah Informatics</p>
+                <p><b><?php echo $name ?> || <?php echo $ic ?></b></p>
+            </footer>
+        </div>
 </body>
 </html>
