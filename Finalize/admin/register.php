@@ -28,30 +28,43 @@
     		<ul id="menu">
         		<li><a href="index.php"><img src="../img/logo.png" width="180" height="60" /></a></li>
         		<li><a href="create_invoice.php">Create Invoice</a></li>
+                <li><a href="register.php">Register</a></li>
                 <li><a href="profile.php">Profile</a></li>
         		<li><a href="../logout.php">Logout</a></li>
 			</ul>
 		</div>
         <br /><br />
         <div>
+        	<div>
            	<center>
-            	<form action="p_add.php" method="post">
+            	<form action="register.php" method="post">
                 	<fieldset style="width:20%">
-                    	<legend>New Client</legend><br />
-                    		<label><b>Project Code</b></label><br />
-                            	<input type="text" name="pro_code" /><br />
+                    	<legend>New Staff</legend><br />
+                        
+                        	<label><b>Username</b></label><br />
+                            	<input type="text" name="username" /><br />
                                 
-                            <label><b>Project Name</b></label><br />
-                            	<input type="text" name="pro_name" /><br />
+                            <label><b>Password</b></label><br />
+                            	<input type="password" name="password" /><br />
                                 
-                   	  		<label><b>Project Warranty</b></label><br />
-                   	  			<input type="text" name="pro_warranty" /><br />
+                            <label><b>Name</b></label><br />
+                            	<input type="text" name="name" /><br />
+                                
+                            <label><b>No Ic</b></label><br />
+                            	<input type="text" name="ic" /><br />
+                                
+                            <label><b>Position</b></label><br />
+                            	<input type="text" name="position" /><br />
+                                
+                            <label><b>Level</b></label><br />
+                            	<input type="text" name="level" /><br /><br />
                                 
                            	<input type="submit" name="submit" value="Submit" />
                     </fieldset>
                 </form>
             </center>
        	</div>
+        </div>
         <br />
         <div>
         	<footer align="center">
@@ -59,21 +72,25 @@
                 <p><b><?php echo $name ?> || <?php echo $ic ?></b></p>
             </footer>
         </div>
-    </div>
+     </div>
 </body>
 </html>
 <?php 
 	if(isset($_POST['submit'])){
 		
-		$pro_code = $_POST['pro_code'];
-		$pro_name = $_POST['pro_name'];
-		$pro_warranty = $_POST['pro_warranty'];
-		
-		$sql1 = mysql_query("INSERT INTO project(pro_code, pro_name,
-							pro_warranty)
-							values ('$pro_code', '$pro_name',
-							'$pro_warranty')");
-		
-		header("Location:create_invoice.php");
+		$username = $_POST['username'];
+		$password = $_POST['password'];
+		$name = $_POST['name'];
+		$ic = $_POST['ic'];
+		$position = $_POST['position'];
+		$level = $_POST['level'];
+
+		mysql_query("INSERT INTO user (username, password, name, ic, position,  level) VALUES('$username', '$password', '$name', '$ic', '$position', '$level')") or die ("Error inserting data into table");
+	
+		echo "success";
+		header("Location:user.php");
+	
+		//Closes specified connection
+		mysql_close($conn);
 	}
 ?>

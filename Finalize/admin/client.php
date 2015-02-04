@@ -28,6 +28,7 @@
     		<ul id="menu">
         		<li><a href="index.php"><img src="../img/logo.png" width="180" height="60" /></a></li>
         		<li><a href="create_invoice.php">Create Invoice</a></li>
+                <li><a href="register.php">Register</a></li>
                 <li><a href="profile.php">Profile</a></li>
         		<li><a href="../logout.php">Logout</a></li>
 			</ul>
