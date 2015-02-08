@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Feb 02, 2015 at 08:45 AM
+-- Generation Time: Feb 08, 2015 at 04:34 PM
 -- Server version: 5.6.12-log
 -- PHP Version: 5.4.12
 
@@ -53,20 +53,14 @@ INSERT INTO `client` (`client_id`, `client_code`, `client_name`, `client_comp`, 
 
 CREATE TABLE IF NOT EXISTS `invoice` (
   `inv_id` int(200) NOT NULL AUTO_INCREMENT,
+  `client_id` int(200) NOT NULL,
+  `pro_id` int(200) NOT NULL,
   `inv_code` varchar(200) NOT NULL,
   `inv_date` date NOT NULL,
   `inv_due` date NOT NULL,
-  `client_id` int(200) NOT NULL,
-  `pro_id` int(200) NOT NULL,
+  `total` varchar(200) NOT NULL,
   PRIMARY KEY (`inv_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10 ;
-
---
--- Dumping data for table `invoice`
---
-
-INSERT INTO `invoice` (`inv_id`, `inv_code`, `inv_date`, `inv_due`, `client_id`, `pro_id`) VALUES
-(1, 'MA/04/01', '2015-02-02', '2015-02-09', 1, 1);
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -76,11 +70,11 @@ INSERT INTO `invoice` (`inv_id`, `inv_code`, `inv_date`, `inv_due`, `client_id`,
 
 CREATE TABLE IF NOT EXISTS `item` (
   `item_id` int(200) NOT NULL AUTO_INCREMENT,
+  `inv_id` int(200) NOT NULL,
   `item_name` varchar(200) NOT NULL,
   `item_quantity` varchar(200) NOT NULL,
   `item_price` varchar(200) NOT NULL,
   `item_total` varchar(200) NOT NULL,
-  `inv_id` int(200) NOT NULL,
   PRIMARY KEY (`item_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
@@ -108,19 +102,6 @@ INSERT INTO `project` (`pro_id`, `pro_code`, `pro_name`, `pro_warranty`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `total`
---
-
-CREATE TABLE IF NOT EXISTS `total` (
-  `total_id` int(200) NOT NULL AUTO_INCREMENT,
-  `total` varchar(200) NOT NULL,
-  `inv_id` int(200) NOT NULL,
-  PRIMARY KEY (`total_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `user`
 --
 
@@ -137,7 +118,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   `position` varchar(200) NOT NULL,
   `level` varchar(200) NOT NULL,
   PRIMARY KEY (`user_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
 --
 -- Dumping data for table `user`
@@ -145,7 +126,8 @@ CREATE TABLE IF NOT EXISTS `user` (
 
 INSERT INTO `user` (`user_id`, `username`, `password`, `name`, `ic`, `dob`, `phone`, `email`, `address`, `position`, `level`) VALUES
 (1, 'tuffah', 'admin', 'Tuffah Informatics', '-', '2013-01-01', '019-9737579', 'umar@tuffah.info', 'No13, Lorong 1, Jalan Bukit Beruang Utama, Taman Bukit Puteri, 75450, Ayer Keroh, Melaka', 'Managing Director', 'admin'),
-(2, 'kamarul', 'kamarul94', 'Kamalrul Bin Rizam', '941020-01-5897', '1994-10-20', '017-7499736', 'kamarulrizam94@gmail.com', 'MLO 2800, Kampung Melayu Sedenak, 81010 Kulaijaya, Johor', 'Internship Student', 'staff');
+(2, 'kamarul', 'kamarul94', 'Kamalrul Bin Rizam', '941020-01-5897', '1994-10-20', '017-7499736', 'kamarulrizam94@gmail.com', 'MLO 2800, Kampung Melayu Sedenak, 81010 Kulaijaya, Johor', 'Internship Student', 'staff'),
+(3, 'ezwan', 'wan123', 'Ka', '123344', '2015-02-04', '', '', '', 'Internship Student', 'staff');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

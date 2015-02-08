@@ -2,8 +2,8 @@
 	include("../inc/connect.php");
 	
 	$id = $_GET['delete'];
-	mysql_query("DELETE FROM user WHERE user_id = $id");
+	mysql_query("DELETE FROM client WHERE client_id = $id");
 	echo "success delete data";
-	header("Location:user_list.php");
+	header("Location:client_list.php");
 
 ?>

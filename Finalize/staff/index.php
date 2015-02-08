@@ -36,11 +36,9 @@
         <div>
         	<h1 align="center">Welcome To Tuffah Invoice System</h1>
         	<table align="center" width="30%">
-           		<th><img src="../img/client.jpg" width="126" height="126" /><br />
-                Client List</th>
+           		<th><a href="../admin/client_list.php"><img src="../img/client.jpg" width="126" height="126" /></a><br />Client List</th>
                 
-                <th><img src="../img/invoice.png" width="126" height="126" /><br />
-                Invoice List</th>
+                <th><a href="#"><img src="../img/invoice.png" width="126" height="126" /></a><br />Invoice List</th>
             </table>
         </div>
         <br />

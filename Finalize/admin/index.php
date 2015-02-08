@@ -27,8 +27,8 @@
     	<div>
     		<ul id="menu">
         		<li><a href="index.php"><img src="../img/logo.png" width="180" height="60" /></a></li>
-        		<li><a href="create_invoice.php">Create Invoice</a></li>
                 <li><a href="register.php">Register</a></li>
+        		<li><a href="create_invoice.php">Create Invoice</a></li>
                 <li><a href="profile.php">Profile</a></li>
         		<li><a href="../logout.php">Logout</a></li>
 			</ul>
@@ -37,12 +37,12 @@
         <div>
         	<h1 align="center">Welcome To Tuffah Invoice System</h1>
         	<table align="center" width="30%">
-            	  <th><a href="user.php"><img src="../img/staff.png" width="126" height="126" /></a><br />
+            	  <th><a href="user_list.php"><img src="../img/staff.png" width="126" height="126" /></a><br />
            	      User List</th>
-                  <th><a href="client.php"><img src="../img/client.jpg" width="126" height="126" /></a><br />
+                  <th><a href="client_list.php"><img src="../img/client.jpg" width="126" height="126" /></a><br />
                   Client List</th>
                   <tr>
-                  <th colspan="2"><img src="../img/invoice.png" width="126" height="126" /><br />Invoice List</th>
+                  <th colspan="2"><a href="#"><img src="../img/invoice.png" width="126" height="126" /></a><br />Invoice List</th>
             </table>
         </div>
         <br />

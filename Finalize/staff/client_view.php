@@ -39,7 +39,7 @@
 		</div>
         <br /><br />
         <div align="center">
-    		<form action="client.php" method="post">
+    		<form action="client_list.php" method="post">
             	<table width="30%" border="2" align="center">
                 	<th colspan="3">CLIENT</th>
                     <tr>

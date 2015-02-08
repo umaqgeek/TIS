@@ -47,7 +47,7 @@
         <br /><br />
         <div>
         	<center>
-            	<form action="#" method="post">
+            	<form action="i_desc.php" method="post">
                 	<fieldset style="width:50%">
                     	<table align="left" width="40%">
                       		<tr>
@@ -94,43 +94,33 @@
                         	<th width="73%">Description</th>
                             <th width="7%">Quantity</th>
                             <th width="20%">Price</th>
+                            <th width="20%">Total</th>
                         </tr>
                             
                         	<?php for($x = 1; $x <= $qty; $x++ ){ ?>   
                         	<tr>
                         		<td><input name="item_name[]" type="text" size="70" /></td>
-                            	<td><input name="quantity[]" type="text" size="6" maxlength="6" /></td>
+                            	<td><input name="quantity[]" type="text" onkeyup="" size="6" maxlength="6" /></td>
                             	<td><input name="price[]" type="text" size="6" maxlength="6" /></td>
+                                <td><input name="item_total[]" type="text" size="6" maxlength="6" /></td>
                        		<?php } ?>
+                            
                             </tr>
                             <tr>
-                            	<td colspan="3" bgcolor="#000000"></td>
-                            </tr>
-                            <tr >
-                            	<td rowspan="3"><br />
-                                	<table align="center" border="1">
-                                    	<tr>
-                                    		<th bgcolor="#00CC00">OTHERS COMMENTS</th>
-                                        <tr>
-                                        <tr>
-                                        	<td>1. Total payment due in 7 days<br />
-                                            	2. Please include the invoice number on your check</td>
-                                        </tr>
-                                    </table><br />
-                                </td>
-                            	<th align="right">Subtotal</th>
-                                <td><input name="sbtotal" type="text" size="6" maxlength="10" /></td>
-                            </tr>
-                            <tr>
-                            	<th align="right">GST</th>
-                                <td align="center"><input name="gst" type="text" disabled="disabled" size="6" maxlength="10" value="-" /></td>
-                            </tr>
-                            <tr>
-                            	<th align="right">Total Due</th>
-                                <td><input name="total" type="text" size="6" maxlength="10" /></td>
-                            </tr>
-                            <tr>
-                            	<td align="right" colspan="3"><p>Make all checks payable to<br />Tuffah Informatics</p></td>
+                            	<td colspan="2" rowspan="3">
+                                	<center>
+                                    	<table>
+                                        	<tr>
+                                            	<td bgcolor="#009900"><font color="#FFFFFF">OTHER COMMENTS</font></td>
+                                            </tr>
+                                            <tr>
+                                            	<td>1. Total Payments due in 7 days<br />
+                                                	2.Please include the invoice number on your checks</td>
+                                            </tr>
+                                        </table>
+                                    </center></td>
+                                <td>TOTAL</td>
+                                <td><input name="total" type="text" size="6" maxlength="6" /></td>
                             </tr>
                             <tr>
                         	<td colspan="5" align="center"><input name="next" type="submit" value="Submit" />

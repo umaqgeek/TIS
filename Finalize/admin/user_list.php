@@ -13,16 +13,12 @@
 	
 	$name = $row['name'];
 	$ic = $row['ic'];
-	
-	$sql1 = "SELECT * FROM user WHERE ic = '$id'";
-	$res1 = mysql_query($sql1) or die (mysql_error());
-	$user = mysql_fetch_array($res1);
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Home</title>
+<title>User List</title>
 <link rel="stylesheet" href="../style/style.css" type="text/css" />
 </head>
 
@@ -39,38 +35,44 @@
 		</div>
         <br /><br />
         <div>
-            <center>
-            	<form action="pf_edit.php" method="post">
-            		<table align="center" width="40%" border="1">
-                		<tr>
-                    		<th width="30%">Name</th>
-                        	<th width="70%"><?php echo  $user['name']; ?></th>
-                    	</tr>
-                    	<tr>
-                    		<th>IC No</th>
-                        	<th><?php echo  $user['ic']; ?></th>
-                    	</tr>
-                    	<tr>
-                    		<th>Date Of Birth</th>
-                        	<th><?php echo  $user['dob']; ?></th>
-                    	</tr>
-                    	<tr>
-                    		<th>No Phone</th>
-                        	<th><?php echo  $user['phone']; ?></th>
-                    	</tr>
-                   	 	<tr>
-                    		<th>Email</th>
-                        	<th><?php echo  $user['email']; ?></th>
-                    	</tr>
-                    	<tr>
-                    		<th>Address</th>
-                        	<th><?php echo  $user['address']; ?></th>
-                    	</tr>
-                	</table><br />
-                <input type="submit" name="edit" value="Edit" />
-      		</form>
-            </center>
-      	</div>
+    		<table border="1" align="center">
+            	<tr>
+                	<th colspan="13">USERS</th>
+                </tr>
+                <tr>
+                	<th>NO</th>
+                    <th>Username</th>
+                    <th>Password</th>
+                    <th>Position</th>
+                    <th>Level</th>
+                    <th colspan="2">Action</th>
+               		
+                    <tr>
+                	<?php
+						$sql1 = "SELECT * FROM user";
+						$res1 = mysql_query($sql1) or die('Query failed. ' . mysql_error());
+						$row = mysql_fetch_array($res, MYSQL_ASSOC);
+							$i=1;
+								while($user = mysql_fetch_array($res1)){
+									echo "<tr>";
+							
+									echo "<td align='center'>" .$i. "</td>";
+									echo "<td align='center'>" .$user['username']. "</td>";
+									echo "<td align='center'>" .$user['password']. "</td>";
+									echo "<td align='center'>" .$user['position']. "</td>";
+									echo "<td align='center'>" .$user['level']. "</td>";
+							
+									echo "<td align='center'><a href='user_view.php?view=$user[user_id]'>View</a></td>";
+									echo "<td align='center'><a href='user_delete.php?delete=$user[user_id]'>Delete</a></td>";
+							
+									echo "</tr>";
+							
+									$i++;
+								}
+					?>
+            	</tr>
+        </table>
+        </div>
         <br />
         <div>
         	<footer align="center">

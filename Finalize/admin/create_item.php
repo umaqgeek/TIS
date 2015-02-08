@@ -39,8 +39,8 @@
     	<div>
     		<ul id="menu">
         		<li><a href="index.php"><img src="../img/logo.png" width="180" height="60" /></a></li>
-        		<li><a href="create_invoice.php">Create Invoice</a></li>
                 <li><a href="register.php">Register</a></li>
+        		<li><a href="create_invoice.php">Create Invoice</a></li>
                 <li><a href="profile.php">Profile</a></li>
         		<li><a href="../logout.php">Logout</a></li>
 			</ul>
@@ -48,7 +48,7 @@
         <br /><br />
         <div>
         	<center>
-            	<form action="#" method="post">
+            	<form action="i_desc.php" method="post">
                 	<fieldset style="width:50%">
                     	<table align="left" width="40%">
                       		<tr>
@@ -101,10 +101,27 @@
                         	<?php for($x = 1; $x <= $qty; $x++ ){ ?>   
                         	<tr>
                         		<td><input name="item_name[]" type="text" size="70" /></td>
-                            	<td><input name="quantity[]" type="text" size="6" maxlength="6" /></td>
+                            	<td><input name="quantity[]" type="text" onkeyup="" size="6" maxlength="6" /></td>
                             	<td><input name="price[]" type="text" size="6" maxlength="6" /></td>
-                                <td><input name="total[]" type="text" size="6" maxlength="6" /></td>
+                                <td><input name="item_total[]" type="text" size="6" maxlength="6" /></td>
                        		<?php } ?>
+                            
+                            </tr>
+                            <tr>
+                            	<td colspan="2" rowspan="3">
+                                	<center>
+                                    	<table>
+                                        	<tr>
+                                            	<td bgcolor="#009900"><font color="#FFFFFF">OTHER COMMENTS</font></td>
+                                            </tr>
+                                            <tr>
+                                            	<td>1. Total Payments due in 7 days<br />
+                                                	2.Please include the invoice number on your checks</td>
+                                            </tr>
+                                        </table>
+                                    </center></td>
+                                <td>TOTAL</td>
+                                <td><input name="total" type="text" size="6" maxlength="6" /></td>
                             </tr>
                             <tr>
                         	<td colspan="5" align="center"><input name="next" type="submit" value="Submit" />
