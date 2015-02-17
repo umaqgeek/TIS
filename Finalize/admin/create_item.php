@@ -101,8 +101,8 @@
                         	<?php for($x = 1; $x <= $qty; $x++ ){ ?>   
                         	<tr>
                         		<td><input name="item_name[]" type="text" size="70" /></td>
-                            	<td><input name="quantity[]" type="text" onkeyup="" size="6" maxlength="6" /></td>
-                            	<td><input name="price[]" type="text" size="6" maxlength="6" /></td>
+                            	<td><input name="item_quantity[]" type="text" size="6" maxlength="6" /></td>
+                            	<td><input name="item_price[]" type="text" size="6" maxlength="6" /></td>
                                 <td><input name="item_total[]" type="text" size="6" maxlength="6" /></td>
                        		<?php } ?>
                             
